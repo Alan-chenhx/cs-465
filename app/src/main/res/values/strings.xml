@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CustAlarmable</string>
+    <string-array name="ringtone_arrays">
+        <item>Chimes</item>
+        <item>ringtone1</item>
+        <item>ringtone2</item>
+    </string-array>
 </resources>
