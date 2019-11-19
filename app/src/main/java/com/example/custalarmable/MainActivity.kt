@@ -10,17 +10,13 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.widget.Toolbar
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val simpleAdapter = ListAdapter((1..5).map { AlarmItem() }.toMutableList())
+    private val listAdapter = ListAdapter((1..5).map { AlarmItem() }.toMutableList())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = simpleAdapter
+        recyclerView.adapter = listAdapter
 
         val swipeHandler = object : SwipeToDeleteCallback(this) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -47,7 +43,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.addItemBtn -> simpleAdapter.addItem(AlarmItem())
+            R.id.addItemBtn -> {
+                val intent = Intent(this, SnoozeSetting::class.java)
+                startActivity(intent)
+                listAdapter.addItem(AlarmItem())
+            }
         }
     }
 
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.statistics -> {
-                var intent = Intent(this, Analysis::class.java)
+                val intent = Intent(this, Analysis::class.java)
                 startActivity(intent)
             }
         }

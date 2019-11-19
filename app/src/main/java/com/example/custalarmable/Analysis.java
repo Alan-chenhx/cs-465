@@ -43,12 +43,12 @@ public class Analysis extends AppCompatActivity {
     private void initViews() {
 
         //使用适配器将ViewPager与Fragment绑定在一起
-        mViewPager= (ViewPager) findViewById(R.id.view);
+        mViewPager= findViewById(R.id.view);
         myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(myFragmentPagerAdapter);
 
         //将TabLayout与ViewPager绑定在一起
-        mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mTabLayout = findViewById(R.id.tabs);
         mTabLayout.setupWithViewPager(mViewPager);
 
         //指定Tab的位置

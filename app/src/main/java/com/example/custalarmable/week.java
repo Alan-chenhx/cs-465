@@ -38,9 +38,9 @@ public class week extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private CombinedChart dataChart;//图表
     private CombinedData data;
-    Integer[] datas = {3,4,1,5,8,0,7};
-    Integer z[] = {8,9,4,5,7,4,9};
-    float avg(Integer[] nums){
+    private Integer[] datas = {3,4,1,5,8,0,7};
+    private Integer[] z = {8, 9, 4, 5, 7, 4, 9};
+    private float avg(Integer[] nums){
         float sum=0;
         for (int value:nums){
             sum+=value;
@@ -51,7 +51,7 @@ public class week extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_week, null);
-        dataChart = (CombinedChart) view.findViewById(R.id.chart1);
+        dataChart = view.findViewById(R.id.chart1);
         showDataOnChart();
         Legend legend = dataChart.getLegend();
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
@@ -83,7 +83,7 @@ public class week extends Fragment {
     }
     private void setAxisXBottom() {
         List<String> valuesX = new ArrayList<>();
-        String date[] = {"S", "M", "T", "W", "Th", "F", "S"};
+        String[] date = {"S", "M", "T", "W", "Th", "F", "S"};
         for (int i = 0;i < date.length;i++){
             valuesX.add(date[i]);
         }

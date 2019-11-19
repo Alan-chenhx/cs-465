@@ -11,6 +11,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.widget.Switch;
@@ -39,6 +40,11 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snooze_setting);
 
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar_snooze_setting));
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         //change snooze period
         handleSnoozePeriod();
 
@@ -60,12 +66,12 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
     }
 
     private void handleSnoozePeriod() {
-        snoozePeriodPicker = (Button) findViewById(R.id.snoozePeriod);
+        snoozePeriodPicker = findViewById(R.id.snoozePeriod);
         snoozePeriodPicker.setOnClickListener(this);
     }
 
     private void handleSnoozeLimit() {
-        snoozeLimits = (SeekBar) findViewById(R.id.snoozeLimit);
+        snoozeLimits = findViewById(R.id.snoozeLimit);
         snoozeLimits.setMax(snoozeMax / snoozeStep);
         snoozeLimits.setProgress(0);
         snoozeLimits.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -87,7 +93,7 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
     }
 
     private void handleVolumeOfFirstRing() {
-        firstRingVolume = (SeekBar) findViewById(R.id.volumeOfFirstRing);
+        firstRingVolume = findViewById(R.id.volumeOfFirstRing);
         firstRingVolume.setMax(ringMax / ringStep);
         firstRingVolume.setProgress(0);
         firstRingVolume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -150,7 +156,7 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
     }*/
 
     private void handleIncreaseSoundSwitch() {
-        increaseSound = (Switch) findViewById(R.id.increaseSoundSwitch);
+        increaseSound = findViewById(R.id.increaseSoundSwitch);
         increaseSound.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -160,11 +166,11 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
     }
 
     private void addItemOnFinalRingtone() {
-        finalRingtone = (Spinner) findViewById(R.id.finalSnoozeRingtone);
+        finalRingtone = findViewById(R.id.finalSnoozeRingtone);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ringtone_arrays, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         finalRingtone.setAdapter(adapter);
-        finalRingtone.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+        finalRingtone.setOnItemSelectedListener(new NumberSelectedListener());
     }
 
     @Override
@@ -175,6 +181,7 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         NumberPicker myNumberPicker = new NumberPicker(this);
         myNumberPicker.setMaxValue(30);
         myNumberPicker.setMinValue(1);
+        myNumberPicker.setValue(Integer.parseInt(snoozePeriodPicker.getText().toString()));
         NumberPicker.OnValueChangeListener myValChangedListener = new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
