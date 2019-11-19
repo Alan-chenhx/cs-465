@@ -13,6 +13,14 @@
             android:label="@string/analysis_name"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".alarm_setting"
+            android:label="@string/analysis_name"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".SnoozeSetting"
+            android:label="@string/analysis_name"
+            android:parentActivityName=".alarm_setting">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

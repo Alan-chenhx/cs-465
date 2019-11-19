@@ -46,9 +46,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.addItemBtn -> simpleAdapter.addItem(AlarmItem())
+        when (v?.id){
+            R.id.addItemBtn -> {
+                var intent = Intent(this, alarm_setting::class.java)
+                startActivity(intent)
+            }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

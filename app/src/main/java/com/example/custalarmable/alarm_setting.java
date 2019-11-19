@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton;
@@ -15,6 +16,7 @@ public class alarm_setting extends AppCompatActivity   {
 
     RadioButton radiobtn;
     Switch mySwitch;
+    ToggleButton auto_delete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,7 @@ public class alarm_setting extends AppCompatActivity   {
         final ToggleButton myToggleButton5= (ToggleButton)  findViewById(R.id.buttonThur);
         final ToggleButton myToggleButton6= (ToggleButton)  findViewById(R.id.buttonFri);
         final ToggleButton myToggleButton7= (ToggleButton)  findViewById(R.id.buttonSat);
+        auto_delete = (ToggleButton) findViewById(R.id.auto_delete);
         myToggleButton1.setEnabled(false);
         myToggleButton2.setEnabled(false);
         myToggleButton3.setEnabled(false);
@@ -52,11 +55,20 @@ public class alarm_setting extends AppCompatActivity   {
         myToggleButton5.setEnabled(false);
         myToggleButton6.setEnabled(false);
         myToggleButton7.setEnabled(false);
+        auto_delete.setChecked(false);
+        auto_delete.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked==true){
+                    mySwitch.setChecked(false);
+                }
+            }
+        });
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // do something, the isChecked will be
                 // true if the switch is in the On position
                 if (isChecked==false){
+
                     myToggleButton1.setChecked(false);
                     myToggleButton1.setEnabled(false);
                     myToggleButton2.setChecked(false);
@@ -71,9 +83,8 @@ public class alarm_setting extends AppCompatActivity   {
                     myToggleButton6.setEnabled(false);
                     myToggleButton7.setChecked(false);
                     myToggleButton7.setEnabled(false);
-                }
-                if (isChecked==true){
-
+                }else{
+                    auto_delete.setChecked(false);
                     myToggleButton1.setEnabled(true);
                     myToggleButton1.setChecked(false);
                     myToggleButton2.setEnabled(true);

@@ -41,27 +41,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <TimePicker
                     android:id="@+id/timepicker"
                     android:layout_width="match_parent"
 
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-80dp"
-                    android:layout_marginTop="-35dp"
-                    android:layout_marginRight="-80dp"
-                    android:scaleX="0.75"
-                    android:scaleY="0.75"
-                    android:layout_marginBottom="-5dp"/>
+
+                    />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-95dp"
+                android:paddingTop="5dp"
                 android:gravity="left"
                 android:orientation="horizontal"
                 android:background="#ffffff">
@@ -91,65 +87,72 @@
 
                 <ToggleButton
                     android:id="@+id/buttonSun"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="S"
                     android:textOn="S" />
 
                 <ToggleButton
                     android:id="@+id/buttonMon"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="M"
                     android:textOn="M" />
 
                 <ToggleButton
                     android:id="@+id/buttonTue"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="T"
                     android:textOn="T" />
 
                 <ToggleButton
                     android:id="@+id/buttonWed"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="W"
                     android:textOn="W" />
 
                 <ToggleButton
                     android:id="@+id/buttonThur"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textAllCaps="false"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="Th"
                     android:textOn="Th" />
 
                 <ToggleButton
                     android:id="@+id/buttonFri"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="F"
                     android:textOn="F" />
 
                 <ToggleButton
                     android:id="@+id/buttonSat"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/week_click"
+                    android:layout_height="@dimen/week_click"
                     android:background="#FFFFFF"
                     android:textColor="@drawable/toggle_text_color"
+                    android:textSize="20sp"
                     android:textOff="S"
                     android:textOn="S" />
 
