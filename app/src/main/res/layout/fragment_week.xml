@@ -37,7 +37,7 @@
                android:layout_height="wrap_content"
                android:text="@string/duration"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="left"
                android:textColor="@color/black"
                />
@@ -54,7 +54,7 @@
                android:text="@string/duration_time"
                android:textColor="@color/black"
                android:textSize="20dp"
-               android:textStyle="bold" />
+                />
        </LinearLayout>
        <LinearLayout
            android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                android:layout_height="wrap_content"
                android:text="@string/go_to_bed"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="left"
                android:textColor="@color/black"
                />
@@ -82,7 +82,7 @@
                android:text="@string/go_to_bed_time"
                android:textColor="@color/black"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="right"
                />
        </LinearLayout>
@@ -97,7 +97,7 @@
                android:layout_height="wrap_content"
                android:text="@string/waking_up"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="left"
                android:textColor="@color/black"
                />
@@ -112,7 +112,7 @@
                android:text="@string/waking_up_time"
                android:textColor="@color/black"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="right"
                />
        </LinearLayout>
@@ -127,7 +127,7 @@
                android:layout_height="wrap_content"
                android:text="@string/snooze_time"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="left"
                android:textColor="@color/black"
                />
@@ -142,7 +142,7 @@
                android:text="@string/time_of_snooze"
                android:textColor="@color/black"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="right"
                />
        </LinearLayout>
@@ -157,7 +157,7 @@
                android:layout_height="wrap_content"
                android:text="@string/snooze_number"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="left"
                android:textColor="@color/black"
                />
@@ -171,7 +171,7 @@
                android:text="@string/number_of_times"
                android:textColor="@color/black"
                android:textSize="20dp"
-               android:textStyle="bold"
+               
                android:layout_gravity="right"
                />
        </LinearLayout>
