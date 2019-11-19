@@ -17,7 +17,7 @@ import android.view.MotionEvent;
 import android.widget.ProgressBar;
 
 
-public class sleep extends AppCompatActivity implements View.OnClickListener {
+public class Sleep extends AppCompatActivity implements View.OnClickListener {
     AnimationDrawable dismissAnimation;
     public Button dismissButton;
     public Button snoozeButton;
