@@ -35,6 +35,8 @@ public class Analysis extends AppCompatActivity {
 
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar_sleep_data));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         initViews();
     }

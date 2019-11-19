@@ -11,8 +11,7 @@
         android:id="@+id/toolbar_sleep_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:layoutDirection="rtl">
+        android:background="@color/colorAccent">
 
 
         <TextView
