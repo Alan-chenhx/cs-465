@@ -1,5 +1,6 @@
 package com.example.custalarmable
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
@@ -57,7 +58,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.statistics -> simpleAdapter.addItem(AlarmItem())
+            R.id.statistics -> {
+                var intent = Intent(this, Analysis::class.java)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
