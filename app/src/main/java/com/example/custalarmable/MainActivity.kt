@@ -42,13 +42,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when (v?.id) {
+        when (v?.id){
             R.id.addItemBtn -> {
-                val intent = Intent(this, SnoozeSetting::class.java)
+                var intent = Intent(this, alarm_setting::class.java)
                 startActivity(intent)
                 listAdapter.addItem(AlarmItem())
             }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
