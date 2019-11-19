@@ -20,9 +20,9 @@ import android.widget.TextView;
 public class month extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    GridLayout grid;
-    int num_of_rows=5;
-    int days=31;
+    private GridLayout grid;
+    private int num_of_rows=5;
+    private int days=31;
     private Context mContext;
     private int width;
     @Override
@@ -31,7 +31,7 @@ public class month extends Fragment {
         View view = inflater.inflate(R.layout.fragment_month, null);
 //        GridLayout.LayoutParams params = GridLayout.getLayoutParams();
         this.mContext=getActivity();
-        grid=(GridLayout)view.findViewById(R.id.gv);
+        grid= view.findViewById(R.id.gv);
 //        float width=grid.getWidth();
         DisplayMetrics dm2 = getResources().getDisplayMetrics();
         width=dm2.widthPixels;

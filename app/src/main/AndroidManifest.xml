@@ -13,6 +13,10 @@
             android:label="@string/analysis_name"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".SnoozeSetting"
+            android:label="Snooze Setting"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
