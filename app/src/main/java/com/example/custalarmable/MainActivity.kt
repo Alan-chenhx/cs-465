@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id){
             R.id.addItemBtn -> {
-                var intent = Intent(this, alarm_setting::class.java)
+                var intent = Intent(this, AlarmSetting::class.java)
                 startActivity(intent)
                 listAdapter.addItem(AlarmItem())
             }

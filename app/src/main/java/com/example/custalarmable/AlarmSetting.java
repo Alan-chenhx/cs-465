@@ -12,7 +12,7 @@ import android.widget.Switch;
 
 
 
-public class alarm_setting extends AppCompatActivity   {
+public class AlarmSetting extends AppCompatActivity   {
 
     RadioButton radiobtn;
     Switch mySwitch;
