@@ -1,6 +1,7 @@
 package com.example.custalarmable;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -31,6 +32,10 @@ public class Analysis extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analysis);
+
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar_sleep_data));
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         initViews();
     }
     private void initViews() {

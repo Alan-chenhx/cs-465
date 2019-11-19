@@ -7,6 +7,25 @@
     android:orientation="vertical"
     tools:context=".Analysis">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_sleep_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layoutDirection="rtl">
+
+
+        <TextView
+            android:id="@+id/title_sleep_data"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/analysis_name"
+            android:textColor="@android:color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
