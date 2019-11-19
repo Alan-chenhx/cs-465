@@ -1,0 +1,271 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".SnoozeSetting">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_snooze_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+
+
+        <TextView
+            android:id="@+id/title_snooze_settings"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Snooze Setting"
+            android:textColor="@android:color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            tools:context=".SnoozeSetting" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Snooze every "
+                    android:textSize="@dimen/function_text_size"
+                    android:textColor="#000000"/>
+
+                <Button
+                    android:id="@+id/snoozePeriod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" mins"
+                    android:textSize="@dimen/function_text_size"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/function_text_size"
+                    android:text="Max Number of Snooze:"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="5dp"/>
+                <SeekBar
+                    android:id="@+id/snoozeLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:text="1"
+                        android:textSize="@dimen/number_size"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="5"
+                        android:textSize="@dimen/number_size"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:gravity="center"
+                        android:textSize="@dimen/number_size"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:paddingLeft="45dp"
+                        android:textSize="@dimen/number_size"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="unlimited"
+                        android:gravity="right"
+                        android:textSize="@dimen/number_size"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+                <!--        <com.example.custalarmable.SeekbarWithIntervals-->
+                <!--            android:id="@+id/snoozeLimit"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_centerInParent="true">-->
+                <!--        </com.example.custalarmable.SeekbarWithIntervals>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="25dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Final Snooze Ringtone:"
+                    android:textColor="#000000"
+                    android:textSize="17dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="right">
+                    <Spinner
+                        android:id="@+id/finalSnoozeRingtone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Increase Sound"
+                        android:textSize="@dimen/function_text_size"
+                        android:textColor="#000000"/>
+                    <Switch
+                        android:id="@+id/increaseSoundSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right|center"/>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sound will increase after each snooze"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volume of First Ring:"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="5dp"/>
+                <SeekBar
+                    android:id="@+id/volumeOfFirstRing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <!--        <com.example.custalarmable.SeekbarWithIntervals-->
+                <!--            android:id="@+id/volumeOfFirstRing"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_centerInParent="true">-->
+                <!--        </com.example.custalarmable.SeekbarWithIntervals>-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="@dimen/number_size"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textSize="@dimen/number_size"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="40"
+                        android:textSize="@dimen/number_size"
+                        android:paddingLeft="20dp"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="60"
+                        android:textSize="@dimen/number_size"
+                        android:paddingLeft="25dp"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="80"
+                        android:paddingLeft="30dp"
+                        android:textSize="@dimen/number_size"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:text="100%"
+                        android:textSize="@dimen/number_size"
+                        android:paddingLeft="20dp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@android:color/white"
+            android:src="@drawable/ic_check_white_24dp"
+            android:tint="@color/colorAccent"
+            app:borderWidth="0dp"
+            app:maxImageSize="@dimen/floatingButtonIconSize" />
+    </FrameLayout>
+
+
+</LinearLayout>

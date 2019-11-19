@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingStart="2dp"
+    android:paddingEnd="15dp"
+    android:padding="15dp">
+
+    <!--android:background="@android:color/white"-->
+    <View
+        android:layout_gravity="center_vertical"
+        android:layout_width="7dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rect_tag_work"/>
+
+    <LinearLayout
+        android:layout_marginStart="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/alarmName"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/alarmTime"
+                android:layout_alignParentStart="true"
+                android:includeFontPadding="false"
+                android:textColor="@color/listTextColor"
+                android:textSize="20sp"
+                tools:text="Awesome item" />
+
+            <TextView
+                android:id="@+id/alarmTime"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/alarmAmPm"
+                android:includeFontPadding="false"
+                android:textColor="@color/listTextColor"
+                android:textSize="26sp"
+                tools:text="9:30" />
+
+            <TextView
+                android:id="@+id/alarmAmPm"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/alarmTime"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/listTextColor"
+                android:textSize="18sp"
+                tools:text="AM" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sunday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="@dimen/listDateMargin"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize"
+                android:text="S" />
+
+            <TextView
+                android:id="@+id/monday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/listDateMargin"
+                android:layout_toEndOf="@id/sunday"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize"
+                android:text="M" />
+
+            <TextView
+                android:id="@+id/tuesday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/listDateMargin"
+                android:layout_toEndOf="@id/monday"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize"
+                android:text="T" />
+
+            <TextView
+                android:id="@+id/wednesday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/listDateMargin"
+                android:layout_toEndOf="@id/tuesday"
+                android:text="W"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize" />
+
+            <TextView
+                android:id="@+id/thursday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/listDateMargin"
+                android:layout_toEndOf="@id/wednesday"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize"
+                android:text="T" />
+
+            <TextView
+                android:id="@+id/friday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/listDateMargin"
+                android:layout_toEndOf="@id/thursday"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize"
+                android:text="F" />
+
+            <TextView
+                android:id="@+id/saturday"
+                style="@style/ShadowOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/friday"
+                android:textColor="@color/listTextColor"
+                android:textSize="@dimen/listDateFontSize"
+                android:text="S"
+                tools:textColor="@android:color/darker_gray" />
+
+            <ImageView
+                android:id="@+id/listIncreasingSoundIcon"
+                android:layout_width="@dimen/listIconDim"
+                android:layout_height="@dimen/listIconDim"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:tint="@color/listTextColor"
+                android:src="@drawable/ic_volume_up_white_24dp" />
+
+            <ImageView
+                android:id="@+id/listSnoozeIcon"
+                style="@style/ShadowOverText"
+                android:layout_width="@dimen/listIconDim"
+                android:layout_height="@dimen/listIconDim"
+                android:layout_toStartOf="@id/listIncreasingSoundIcon"
+                android:layout_marginEnd="5dp"
+                android:tint="@color/listTextColor"
+                android:src="@drawable/ic_snooze_black_24dp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <Switch
+        android:switchMinWidth="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
