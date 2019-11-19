@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listDateFontSize">15sp</dimen>
+    <dimen name="listDateMargin">8dp</dimen>
+    <dimen name="listIconDim">18dp</dimen>
+</resources>
