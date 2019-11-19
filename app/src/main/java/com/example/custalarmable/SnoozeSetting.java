@@ -18,7 +18,7 @@ import com.example.custalarmable.SeekbarWithIntervals;
 import android.os.Bundle;
 import android.widget.Switch;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class SnoozeSetting extends AppCompatActivity implements View.OnClickListener {
     //change snooze period
     Button snoozePeriodPicker;
 
