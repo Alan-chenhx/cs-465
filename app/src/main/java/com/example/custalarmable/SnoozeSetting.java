@@ -1,7 +1,4 @@
 package com.example.custalarmable;
-import java.util.ArrayList;
-import java.util.List;
-import com.example.custalarmable.CustomOnItemSelectedListener;
 
 import android.content.DialogInterface;
 import android.view.View;
@@ -14,7 +11,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.custalarmable.SeekbarWithIntervals;
+
 import android.os.Bundle;
 import android.widget.Switch;
 
@@ -40,7 +37,7 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_snooze_setting);
 
         //change snooze period
         handleSnoozePeriod();
