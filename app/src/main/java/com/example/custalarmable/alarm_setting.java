@@ -1,28 +1,43 @@
 package com.example.custalarmable;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.RadioButton;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
 
 
+public class alarm_setting extends AppCompatActivity   {
 
-public class MainActivity extends AppCompatActivity   {
-
-
-
+    RadioButton radiobtn;
+    Switch mySwitch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_alarm_setting);
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar_sleep_data));
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        radiobtn = (RadioButton) findViewById(R.id.sleep);
+        mySwitch = (Switch)  findViewById(R.id.switch1);
+        Toggle_control();
+        Type_control();
+    }
+    private void Type_control(){
+        radiobtn.setChecked(true);
+    }
 
 
 
-        Switch mySwitch = (Switch)  findViewById(R.id.switch1);
+
+
+    private void Toggle_control(){
         final ToggleButton myToggleButton1= (ToggleButton)  findViewById(R.id.buttonSun);
         final ToggleButton myToggleButton2= (ToggleButton)  findViewById(R.id.buttonMon);
         final ToggleButton myToggleButton3= (ToggleButton)  findViewById(R.id.buttonTue);
@@ -76,10 +91,7 @@ public class MainActivity extends AppCompatActivity   {
                 }
             }
         });
-
-
     }
-
 
 }
 
