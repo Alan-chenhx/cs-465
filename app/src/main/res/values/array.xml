@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>Default  </item>
+        <item>Ringtone1</item>
+        <item>Ringtone2</item>
+        <item>Ringtone3</item>
+        <item>Ringtone4</item>
+    </string-array>
+</resources>
