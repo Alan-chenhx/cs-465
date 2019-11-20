@@ -89,7 +89,7 @@
                         android:layout_marginStart="10dp"
                         android:text="Repeats:"
                         android:textColor="@color/text_color"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/function_text_size"
                         android:textStyle="bold" />
 
                     <Switch
@@ -200,7 +200,7 @@
                         android:layout_marginStart="10dp"
                         android:text="Ringtone:"
                         android:textColor="@color/text_color"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/function_text_size"
                         android:textStyle="bold" />
 
                     <include layout="@layout/ringtone_dropdown_menu"
@@ -224,7 +224,7 @@
                         android:layout_centerVertical="true"
                         android:text="Type:"
                         android:textColor="@color/text_color"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/function_text_size"
                         android:textStyle="bold" />
 
 

@@ -2,8 +2,8 @@
     <string name="app_name">CustAlarmable</string>
     <string-array name="ringtone_arrays">
         <item>Chimes</item>
-        <item>ringtone1</item>
-        <item>ringtone2</item>
+        <item>Nature</item>
+        <item>Robot</item>
     </string-array>
     <string name="analysis_name">Sleep Data</string>
     <string name="week">week</string>
