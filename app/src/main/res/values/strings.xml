@@ -20,4 +20,5 @@
     <string name="snooze_number">Average of Snooze</string>
     <string name="number_of_times">4 times</string>
     <string name="info">Try to modify your alarm based on the data!</string>
+    <string name="hint_text"></string>
 </resources>

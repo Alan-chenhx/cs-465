@@ -43,7 +43,6 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar_snooze_setting));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //change snooze period
         handleSnoozePeriod();

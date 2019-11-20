@@ -4,7 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.RadioButton;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton;
@@ -24,19 +25,18 @@ public class AlarmSetting extends AppCompatActivity   {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar_sleep_data));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        radiobtn = (RadioButton) findViewById(R.id.sleep);
+
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(this, R.array.ringtone_arrays, R.layout.dropdown_menu_popup_item);
+
+        AutoCompleteTextView editTextFilledExposedDropdown =
+                findViewById(R.id.outlined_exposed_dropdown);
+        editTextFilledExposedDropdown.setAdapter(adapter);
+
         mySwitch = (Switch)  findViewById(R.id.switch1);
         Toggle_control();
-        Type_control();
     }
-    private void Type_control(){
-        radiobtn.setChecked(true);
-    }
-
-
-
 
 
     private void Toggle_control(){
