@@ -195,6 +195,7 @@
                     android:textColor="@color/text_color"
                     android:layout_marginBottom="5dp"/>
                 <TextView
+                    android:id="@+id/volumeOfFirstRingTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Volume of first ring:"

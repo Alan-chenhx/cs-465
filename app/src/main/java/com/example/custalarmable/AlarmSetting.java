@@ -144,17 +144,28 @@ public class AlarmSetting extends AppCompatActivity {
 
     private void type_control() {
         sleep.setChecked(true);
+        sleep.setBackgroundColor(getResources().getColor(R.color.ColorSleep));
+        sleep.setTextColor(getResources().getColor(R.color.white));
+        work.setTextColor(getResources().getColor(R.color.ColorWork));
         sleep.addOnCheckedChangeListener(new MaterialButton.OnCheckedChangeListener() {
             public void onCheckedChanged(MaterialButton button, boolean isChecked) {
                 if (isChecked) {
+                    sleep.setBackgroundColor(getResources().getColor(R.color.ColorSleep));
+                    sleep.setTextColor(getResources().getColor(R.color.white));
+                    work.setTextColor(getResources().getColor(R.color.ColorWork));
                     work.setChecked(false);
+                    work.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 }
             }
         });
         work.addOnCheckedChangeListener(new MaterialButton.OnCheckedChangeListener() {
             public void onCheckedChanged(MaterialButton button, boolean isChecked) {
                 if (isChecked) {
+                    work.setBackgroundColor(getResources().getColor(R.color.ColorWork));
+                    work.setTextColor(getResources().getColor(R.color.white));
+                    sleep.setTextColor(getResources().getColor(R.color.ColorSleep));
                     sleep.setChecked(false);
+                    sleep.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 }
             }
         });

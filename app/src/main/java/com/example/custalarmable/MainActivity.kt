@@ -49,12 +49,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.addItemBtn -> {
                 var intent = Intent(this, AlarmSetting::class.java)
                 startActivity(intent)
-                listAdapter.addItem(AlarmItem())
+                var testAlarm = AlarmItem()
+                testAlarm.alarmEnable = false
+                testAlarm.alarmType = "work"
+                listAdapter.addItem(testAlarm)
             }
             R.id.jump -> {
                 var intent = Intent(this, Sleep::class.java)
                 startActivity(intent)
-//                listAdapter.addItem(AlarmItem())
             }
 
         }

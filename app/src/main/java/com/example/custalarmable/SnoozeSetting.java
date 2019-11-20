@@ -16,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.google.android.material.slider.Slider;
 
@@ -50,9 +51,13 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         ringtone_arrays = getResources().getStringArray(R.array.ringtone_arrays);
         editTextFilledExposedDropdown.setText(ringtone_arrays[0], false);
 
-        //set up snoozeLimit slider
+        //set up sliders
         snoozeLimitSlider = findViewById(R.id.snoozeLimit);
         snoozeLimitSlider.setLabelFormatter(new NumberSnoozeLabelFormatter());
+        volumeSlider = findViewById(R.id.volumeOfFirstRing);
+        volumeSlider.setEnabled(false);
+        TextView volumeOfFirstRingTitle = (TextView)findViewById(R.id.volumeOfFirstRingTitle);
+        volumeOfFirstRingTitle.setTextColor(getResources().getColor(android.R.color.darker_gray));
 
         //change snooze period
         handleSnoozePeriod();
@@ -71,7 +76,14 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         increaseSound.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
+                TextView volumeOfFirstRingTitle = (TextView)findViewById(R.id.volumeOfFirstRingTitle);
+                if (!isChecked) {
+                    volumeSlider.setEnabled(false);
+                    volumeOfFirstRingTitle.setTextColor(getResources().getColor(android.R.color.darker_gray));
+                } else {
+                    volumeSlider.setEnabled(true);
+                    volumeOfFirstRingTitle.setTextColor(getResources().getColor(R.color.text_color));
+                }
             }
         });
     }

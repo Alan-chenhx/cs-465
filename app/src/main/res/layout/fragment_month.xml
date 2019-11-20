@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:textSize="10dp"
+                    android:textSize="15dp"
                     android:gravity="center"
                     android:text="Less"/>
                 <TextView
@@ -68,11 +68,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textSize="10dp"
+                    android:textSize="15dp"
                     android:text="More"/>
-
-
-
+                
 
             </LinearLayout>
         </LinearLayout>
@@ -90,7 +88,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="22dp"
 
                     android:textStyle="bold"
@@ -104,7 +102,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
+                android:paddingTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -114,7 +112,7 @@
                     android:textSize="20dp"
 
                     android:layout_gravity="left"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -127,14 +125,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="@string/duration_time"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="20dp"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
+                android:paddingTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -144,7 +142,7 @@
                     android:textSize="20dp"
 
                     android:layout_gravity="left"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -155,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/go_to_bed_time"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="20dp"
 
                     android:layout_gravity="right"
@@ -164,7 +162,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
+                android:paddingTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -174,7 +172,7 @@
                     android:textSize="20dp"
 
                     android:layout_gravity="left"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -185,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/waking_up_time"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="20dp"
 
                     android:layout_gravity="right"
@@ -194,7 +192,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
+                android:paddingTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -204,7 +202,7 @@
                     android:textSize="20dp"
 
                     android:layout_gravity="left"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -215,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/time_of_snooze"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="20dp"
 
                     android:layout_gravity="right"
@@ -224,7 +222,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
+                android:paddingTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -234,7 +232,7 @@
                     android:textSize="20dp"
 
                     android:layout_gravity="left"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     />
                 <TextView
                     android:layout_width="0dp"
@@ -244,23 +242,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/number_of_times"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="20dp"
 
                     android:layout_gravity="right"
                     />
             </LinearLayout>
             <LinearLayout
-                android:paddingTop="5dp"
+                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_info_outline_black_24dp"/>
                 <TextView
-                    android:paddingLeft="20dp"
+                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                    android:drawablePadding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/info"/>

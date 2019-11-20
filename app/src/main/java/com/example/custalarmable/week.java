@@ -133,14 +133,14 @@ public class week extends Fragment {
         for (int i = 0; i < datas.length; i++) {
             customCounts.add(new Entry(i + 0.5f,datas[i]));
         }
-        LineDataSet lineDataSet = new LineDataSet(customCounts,"snooze times");
+        LineDataSet lineDataSet = new LineDataSet(customCounts,"Snooze Times");
         lineDataSet.setAxisDependency(YAxis.AxisDependency.RIGHT);
         lineDataSet.setColor(Color.parseColor("#66A3AB"));
 //        lineDataSet.setDrawCircles(false);
         lineDataSet.setCircleColor(Color.parseColor("#66A3AB"));
         lineDataSet.setCircleRadius(5);
         lineDataSet.setLineWidth(3);
-        lineDataSet.setValueTextSize(12);
+        lineDataSet.setValueTextSize(15);
         lineDataSet.setDrawValues(false);
         lineDataSet.setValueTextColor(Color.parseColor("#66A3AB"));
         lineData.addDataSet(lineDataSet);

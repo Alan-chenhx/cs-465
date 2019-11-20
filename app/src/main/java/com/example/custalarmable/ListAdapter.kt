@@ -36,6 +36,13 @@ class ListAdapter(private val items: MutableList<AlarmItem>) : RecyclerView.Adap
             alarmTime.text = alarmItem.alarmTime
             alarmAmPm.text = alarmItem.alarmAmPm
             alarmToggle.isChecked = alarmItem.alarmEnable
+
+            if (alarmItem.alarmType == "sleep") {
+                listTypeBar.background = resources.getDrawable(R.drawable.rect_tag_sleep)
+            } else {
+                listTypeBar.background = resources.getDrawable(R.drawable.rect_tag_work)
+            }
+
             if (!alarmItem.alarmEnable) {
                 rowCard.elevation = 0f
                 rowCard.setCardBackgroundColor(resources.getColor(color.transparent))
