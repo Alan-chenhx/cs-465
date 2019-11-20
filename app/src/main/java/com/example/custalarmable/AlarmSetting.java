@@ -2,11 +2,17 @@ package com.example.custalarmable;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -20,7 +26,9 @@ public class AlarmSetting extends AppCompatActivity   {
     MaterialButton work;
     Switch mySwitch;
     ToggleButton auto_delete;
-
+    int minute;
+    TextView time;
+    Context mcontext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +44,46 @@ public class AlarmSetting extends AppCompatActivity   {
         AutoCompleteTextView editTextFilledExposedDropdown =
                 findViewById(R.id.outlined_exposed_dropdown);
         editTextFilledExposedDropdown.setAdapter(adapter);
-        sleep=(MaterialButton) findViewById(R.id.sleep_type);
-        work    =(MaterialButton) findViewById(R.id.work_type);
+        sleep =(MaterialButton) findViewById(R.id.sleep_type);
+        work =(MaterialButton) findViewById(R.id.work_type);
         mySwitch = (Switch)  findViewById(R.id.switch1);
+        time = (TextView) findViewById(R.id.time);
+        mcontext=getApplicationContext();
         Toggle_control();
         type_control();
+        time_control();
 
+
+
+    }
+    private void time_control(){
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new TimePickerDialog(AlarmSetting.this,new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        int houre = hourOfDay;
+                        String ampm="AM";
+                        AlarmSetting.this.minute = minute;
+                        if(houre >12){
+                            houre-=12;
+                            ampm="PM";
+                        }else if(houre==0){
+                            houre=12;
+                        }else if(houre==12){
+                            ampm="PM";
+                        }
+                        if (AlarmSetting.this.minute < 10){
+                            time.setText(houre+":"+"0"+AlarmSetting.this.minute+" "+ampm);
+                        }else {
+                            time.setText(houre+":"+AlarmSetting.this.minute+" "+ampm);
+                        }
+                    }
+                }, 0, 0, false).show();
+
+            }
+        });
     }
 
     private void type_control(){
