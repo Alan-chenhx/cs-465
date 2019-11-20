@@ -60,8 +60,6 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
 
         //increase sound switch
         handleIncreaseSoundSwitch();
-        //spinner of selecting final ringtone
-        addItemOnFinalRingtone();
     }
 
     private void handleSnoozePeriod() {
@@ -164,13 +162,6 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    private void addItemOnFinalRingtone() {
-        finalRingtone = findViewById(R.id.finalSnoozeRingtone);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ringtone_arrays, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        finalRingtone.setAdapter(adapter);
-        finalRingtone.setOnItemSelectedListener(new NumberSelectedListener());
-    }
 
     @Override
     public void onClick(View v) {

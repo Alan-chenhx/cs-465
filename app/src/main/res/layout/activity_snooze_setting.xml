@@ -25,6 +25,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
+        android:background="@drawable/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -51,7 +52,8 @@
                     android:textSize="@dimen/function_text_size"
                     android:textColor="#000000"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    style="?attr/materialButtonOutlinedStyle"
                     android:id="@+id/snoozePeriod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -131,30 +133,26 @@
                 <!--        </com.example.custalarmable.SeekbarWithIntervals>-->
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="25dp">
+
                 <TextView
+                    android:layout_centerVertical="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Final Snooze Ringtone:"
                     android:textColor="#000000"
                     android:textSize="17dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
 
-                    android:gravity="right">
-                    <Spinner
-                        android:id="@+id/finalSnoozeRingtone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        />
-                </LinearLayout>
+                <include layout="@layout/ringtone_dropdown_menu"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
