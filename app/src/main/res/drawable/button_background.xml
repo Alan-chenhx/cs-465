@@ -8,8 +8,8 @@
     </item>
     <item android:id="@+id/clip_drawable">
         <clip
-            android:clipOrientation="horizontal"
-            android:gravity="start">
+            android:clipOrientation="vertical"
+            android:gravity="bottom">
             <shape
                 android:shape="rectangle">
                 <solid android:color="@android:color/black" />
