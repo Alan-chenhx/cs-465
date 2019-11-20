@@ -24,9 +24,11 @@
             android:text="Alarms"
             android:textColor="@android:color/white" />
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/jump"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:src="@drawable/ic_more_vert_white_24dp" />
 
     </androidx.appcompat.widget.Toolbar>

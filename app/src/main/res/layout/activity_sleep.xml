@@ -24,13 +24,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dismiss"
         android:layout_width="153dp"
         android:layout_height="73dp"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
         android:text="dismiss"
         android:textSize="14sp"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -40,12 +42,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.694" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/snooze"
         android:layout_width="153dp"
         android:layout_height="73dp"
         android:layout_marginTop="20dp"
         android:text="snooze"
+        android:textColor="@color/colorAccent"
         android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

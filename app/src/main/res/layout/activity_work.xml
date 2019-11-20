@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.157" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/dismiss"
         android:layout_width="153dp"
         android:layout_height="73dp"

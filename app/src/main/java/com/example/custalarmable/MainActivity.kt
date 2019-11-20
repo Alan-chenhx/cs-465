@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
         addItemBtn.setOnClickListener(this)
+        jump.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -48,8 +51,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
                 listAdapter.addItem(AlarmItem())
             }
-        }
+            R.id.jump -> {
+                var intent = Intent(this, Sleep::class.java)
+                startActivity(intent)
+//                listAdapter.addItem(AlarmItem())
+            }
 
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
