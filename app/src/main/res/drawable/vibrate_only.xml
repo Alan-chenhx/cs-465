@@ -2,13 +2,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="false">
         <layer-list>
+            
             <item>
                 <shape android:shape="oval">
-                    <solid android:color="#B6B6B6"/>
+                    <solid android:color="#BBDEFB"/>
                 </shape>
             </item>
 
-            <item android:drawable="@drawable/ic_vibration_black_24dp">
+            <item android:drawable="@drawable/ic_vibration_color_24dp">
             </item>
         </layer-list>
     </item>
@@ -22,7 +23,7 @@
                 </shape>
             </item>
 
-            <item android:drawable="@drawable/ic_vibration_black_24dp">
+            <item android:drawable="@drawable/ic_vibration_white_24dp">
 
             </item>
 

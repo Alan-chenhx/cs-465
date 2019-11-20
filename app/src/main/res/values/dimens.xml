@@ -8,4 +8,5 @@
     <dimen name="listIconDim">18dp</dimen>
     <dimen name="floatingButtonIconSize">40dp</dimen>
     <dimen name="week_click">40dp</dimen>
+    <dimen name="actionButtonSize">65dp</dimen>
 </resources>

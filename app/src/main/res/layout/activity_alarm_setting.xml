@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_sleep_data"
@@ -18,20 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:backgroundTint="@android:color/white"
+            android:ellipsize="end"
             android:inputType="text"
             android:minWidth="100dp"
-            android:backgroundTint="@android:color/white"
             android:scrollHorizontally="true"
-            android:ellipsize="end"
             android:text="CS465 Alarm"
             android:textColor="@android:color/white" />
 
         <ImageView
-            android:paddingHorizontal="20dp"
-            android:layout_gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_delete_white_24dp"/>
+            android:layout_gravity="end"
+            android:paddingHorizontal="20dp"
+            android:src="@drawable/ic_delete_white_24dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -48,30 +48,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingHorizontal="5dp">
 
                 <androidx.cardview.widget.CardView
-                    app:cardElevation="4dp"
-                    app:cardCornerRadius="5dp"
-                    android:layout_margin="20dp"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/time"
-                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
                         android:paddingHorizontal="20dp"
                         android:paddingVertical="10dp"
-                        android:background="@android:color/transparent"
-                        android:includeFontPadding="false"
+                        android:text="9:00 AM"
                         android:textColor="#64B5F6"
-                        android:textSize="50sp"
-                        android:clickable="true"
-                        android:text="9:00 AM"/>
+                        android:textSize="50sp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -79,9 +79,9 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
                     android:gravity="start|center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -111,87 +111,87 @@
                         android:id="@+id/buttonSun"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="S"
-                        android:textOn="S" />
+                        android:textOn="S"
+                        android:textSize="20sp" />
 
                     <ToggleButton
                         android:id="@+id/buttonMon"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="M"
-                        android:textOn="M" />
+                        android:textOn="M"
+                        android:textSize="20sp" />
 
                     <ToggleButton
                         android:id="@+id/buttonTue"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="T"
-                        android:textOn="T" />
+                        android:textOn="T"
+                        android:textSize="20sp" />
 
                     <ToggleButton
                         android:id="@+id/buttonWed"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="W"
-                        android:textOn="W" />
+                        android:textOn="W"
+                        android:textSize="20sp" />
 
                     <ToggleButton
                         android:id="@+id/buttonThur"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textAllCaps="false"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="Th"
-                        android:textOn="Th" />
+                        android:textOn="Th"
+                        android:textSize="20sp" />
 
                     <ToggleButton
                         android:id="@+id/buttonFri"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="F"
-                        android:textOn="F" />
+                        android:textOn="F"
+                        android:textSize="20sp" />
 
                     <ToggleButton
                         android:id="@+id/buttonSat"
                         android:layout_width="@dimen/week_click"
                         android:layout_height="@dimen/week_click"
-                        android:background="@drawable/toggle_repeats"
                         android:layout_margin="5dp"
+                        android:background="@drawable/toggle_repeats"
                         android:textColor="@drawable/toggle_text_color"
-                        android:textSize="20sp"
                         android:textOff="S"
-                        android:textOn="S" />
+                        android:textOn="S"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start|center_vertical"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    android:gravity="start|center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,12 +203,13 @@
                         android:textSize="@dimen/function_text_size"
                         android:textStyle="bold" />
 
-                    <include layout="@layout/ringtone_dropdown_menu"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="20dp"
+                    <include
+                        layout="@layout/ringtone_dropdown_menu"
                         android:layout_width="175dp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp" />
 
                 </RelativeLayout>
 
@@ -230,118 +231,135 @@
 
                     <com.google.android.material.button.MaterialButtonToggleGroup
                         android:id="@+id/type"
-                        android:layout_marginEnd="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_marginEnd="10dp">
 
                         <com.google.android.material.button.MaterialButton
-                            style="?attr/materialButtonOutlinedStyle"
                             android:id="@+id/work_type"
-                            app:strokeColor="@color/ColorWork"
+                            style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="WORK"/>
+                            android:text="WORK"
+                            app:strokeColor="@color/ColorWork" />
 
                         <com.google.android.material.button.MaterialButton
-                            style="?attr/materialButtonOutlinedStyle"
                             android:id="@+id/sleep_type"
-                            app:strokeColor="@color/ColorSleep"
+                            style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SLEEP"/>
+                            android:text="SLEEP"
+                            app:strokeColor="@color/ColorSleep" />
 
 
                     </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 </RelativeLayout>
 
-
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:padding="5dp"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="50dp"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    android:paddingTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/action_buttons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clipToPadding="false"
+                        android:clipChildren="false"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <ToggleButton
+                            android:id="@+id/auto_delete"
+                            android:layout_width="@dimen/actionButtonSize"
+                            android:layout_height="@dimen/actionButtonSize"
+                            android:layout_marginEnd="25dp"
+                            android:background="@drawable/auto_delete"
+                            android:gravity="center"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <ToggleButton
+                            android:id="@+id/vibrate_only"
+                            android:layout_width="@dimen/actionButtonSize"
+                            android:layout_height="@dimen/actionButtonSize"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@drawable/vibrate_only"
+                            android:gravity="center"
+                            android:textOff=""
+                            android:textOn="" />
 
 
-                    <ToggleButton
-                        android:id="@+id/auto_delete"
-                        android:elevation="5dp"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginRight="25dp"
-                        android:background="@drawable/auto_delete"
-                        android:gravity="center"
-                        android:textOff=""
-                        android:textOn="" />
-
-                    <ToggleButton
-                        android:id="@+id/vibrate_only"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:background="@drawable/vibrate_only"
-                        android:gravity="center"
-                        android:textOff=""
-                        android:textOn="" />
-
-
-                    <ToggleButton
-                        android:id="@+id/snooze"
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="25dp"
-                        android:background="@drawable/snooze"
-                        android:gravity="center"
-                        android:textOff=""
-                        android:textOn="" />
+                        <ToggleButton
+                            android:id="@+id/snooze"
+                            android:layout_width="@dimen/actionButtonSize"
+                            android:layout_height="@dimen/actionButtonSize"
+                            android:layout_marginStart="25dp"
+                            android:background="@drawable/snooze"
+                            android:elevation="10dp"
+                            android:gravity="center"
+                            android:textOff=""
+                            android:textOn="" />
+                    </LinearLayout>
 
                     <ImageButton
                         android:id="@+id/setting"
-                        android:layout_width="wrap_content"
+                        android:translationX="-15dp"
+                        android:layout_toEndOf="@id/action_buttons"
+                        android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:background="#00000000"
+                        android:tint="@color/black"
                         android:src="@drawable/ic_settings_black_24dp" />
-                </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="10dp">
-                    <TextView
-                        android:layout_width="80dp"
+                    <LinearLayout
+                        android:layout_below="@id/action_buttons"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textColor="@color/text_color"
-                        android:layout_marginRight="15dp"
-                        android:text="Auto-Delete"/>
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:textColor="@color/text_color"
-                        android:text="Vibrate Only"/>
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textColor="@color/text_color"
-                        android:layout_marginLeft="15dp"
-                        android:text="Snooze"/>
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_horizontal"
+                        android:clipToPadding="false"
+                        android:clipChildren="false"
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="center"
+                            android:text="Auto-Delete"
+                            android:textColor="@color/text_color" />
 
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="center"
+                            android:text="Vibrate Only"
+                            android:textColor="@color/text_color" />
 
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:gravity="center"
+                            android:text="Snooze"
+                            android:textColor="@color/text_color" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
             </LinearLayout>
 
         </ScrollView>

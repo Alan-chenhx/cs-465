@@ -4,11 +4,11 @@
         <layer-list>
             <item>
                 <shape android:shape="oval">
-                    <solid android:color="#B6B6B6"/>
+                    <solid android:color="#BBDEFB"/>
                 </shape>
             </item>
 
-            <item android:drawable="@drawable/ic_snooze_black_24dp">
+            <item android:drawable="@drawable/ic_snooze_color_24dp">
             </item>
         </layer-list>
     </item>
@@ -22,7 +22,7 @@
                 </shape>
             </item>
 
-            <item android:drawable="@drawable/ic_snooze_black_24dp">
+            <item android:drawable="@drawable/ic_snooze_white_24dp">
 
             </item>
 
