@@ -11,13 +11,16 @@ import android.widget.ToggleButton;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import com.google.android.material.button.MaterialButton;
 
 
 public class AlarmSetting extends AppCompatActivity   {
 
-    RadioButton radiobtn;
+    MaterialButton sleep;
+    MaterialButton work;
     Switch mySwitch;
     ToggleButton auto_delete;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +36,33 @@ public class AlarmSetting extends AppCompatActivity   {
         AutoCompleteTextView editTextFilledExposedDropdown =
                 findViewById(R.id.outlined_exposed_dropdown);
         editTextFilledExposedDropdown.setAdapter(adapter);
-
+        sleep=(MaterialButton) findViewById(R.id.sleep_type);
+        work    =(MaterialButton) findViewById(R.id.work_type);
         mySwitch = (Switch)  findViewById(R.id.switch1);
         Toggle_control();
+        type_control();
+
     }
 
+    private void type_control(){
+        sleep.setChecked(true);
+        sleep.addOnCheckedChangeListener(new MaterialButton.OnCheckedChangeListener(){
+            public void onCheckedChanged (MaterialButton button,boolean isChecked){
+                if(isChecked==true){
+                    work.setChecked(false);
+                }
+            }
+        });
+        work.addOnCheckedChangeListener(new MaterialButton.OnCheckedChangeListener(){
+            public void onCheckedChanged (MaterialButton button,boolean isChecked){
+                if(isChecked==true){
+                    sleep.setChecked(false);
+                }
+            }
+        });
+
+
+    }
 
     private void Toggle_control(){
         final ToggleButton myToggleButton1= (ToggleButton)  findViewById(R.id.buttonSun);

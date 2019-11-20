@@ -236,6 +236,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             style="?attr/materialButtonOutlinedStyle"
+                            android:id="@+id/work_type"
                             app:strokeColor="@color/ColorWork"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -243,6 +244,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             style="?attr/materialButtonOutlinedStyle"
+                            android:id="@+id/sleep_type"
                             app:strokeColor="@color/ColorSleep"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
