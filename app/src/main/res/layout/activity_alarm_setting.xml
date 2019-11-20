@@ -20,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:inputType="text"
             android:minWidth="100dp"
-            android:backgroundTint="@android:color/darker_gray"
+            android:backgroundTint="@android:color/white"
             android:scrollHorizontally="true"
             android:ellipsize="end"
             android:text="CS465 Alarm"

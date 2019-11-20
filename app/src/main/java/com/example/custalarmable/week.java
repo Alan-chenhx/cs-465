@@ -38,7 +38,7 @@ public class week extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private CombinedChart dataChart;//图表
     private CombinedData data;
-    private Integer[] datas = {3,4,1,5,8,0,7};
+    private Integer[] datas = {3,4,2,5,8,2,7};
     private Integer[] z = {8, 9, 4, 5, 7, 4, 9};
     private float avg(Integer[] nums){
         float sum=0;
@@ -78,7 +78,7 @@ public class week extends Fragment {
         dataChart.setDrawGridBackground(false);
         dataChart.setDrawBarShadow(false);
         dataChart.setHighlightFullBarEnabled(true);
-        dataChart.animateX(2000);
+        dataChart.animateX(1000);
 //        dataChart.getAxisRight().setEnabled(false);
     }
     private void setAxisXBottom() {

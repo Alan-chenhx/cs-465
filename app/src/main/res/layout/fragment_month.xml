@@ -5,12 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".month">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingHorizontal="20dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
         <GridLayout
