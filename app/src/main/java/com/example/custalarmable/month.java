@@ -55,7 +55,7 @@ public class month extends Fragment {
 
             tmp.setMinimumWidth((width-20)/7-50);
             tmp.setMinimumHeight((width-20)/7-50);
-            tmp.setBackgroundColor(Color.rgb(0, 0, 0));
+            tmp.setBackgroundColor(Color.rgb(0, 97, 0));
             tmp.setAlpha((float)d);
 //            tmp.setText(Integer.toString(width));
             GridLayout.Spec rowSpec = GridLayout.spec(i/7);     //设置它的行和列

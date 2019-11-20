@@ -6,6 +6,11 @@
     <color name="black4">#66000000</color>
     <color name="black2">#33000000</color>
     <color name="white">#ffffff</color>
+    <color name="green">#006100</color>
+    <color name="green8">#CC006100</color>
+    <color name="green6">#99006100</color>
+    <color name="green4">#66006100</color>
+    <color name="green2">#33006100</color>
     <color name="colorPrimary">#4198FC</color>
     <color name="colorPrimaryDark">#4198FC</color>
     <color name="colorAccent">#4198FC</color>

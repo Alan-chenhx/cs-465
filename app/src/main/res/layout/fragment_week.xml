@@ -15,177 +15,195 @@
            android:layout_width="match_parent"
            android:layout_height="240dp"
            />
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:textColor="@color/black"
-           android:textSize="22dp"
-           android:paddingTop="20dp"
-           android:textStyle="bold"
-           android:text="@string/average" />
        <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="15dp"
-           android:orientation="horizontal">
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:paddingHorizontal="10dp"
+           >
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingTop="-5dp"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/black"
+                   android:textSize="22dp"
 
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/duration"
-               android:textSize="20dp"
-               
-               android:layout_gravity="left"
-               android:textColor="@color/black"
-               />
-           <TextView
-               android:layout_width="0dp"
-               android:layout_height="match_parent"
-               android:layout_weight="1"/>
+                   android:textStyle="bold"
+                   android:text="@string/average" />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"/>
 
-           <TextView
-               android:id="@+id/sleep_duration"
-               android:layout_width="wrap_content"
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:layout_gravity="right"
-               android:text="@string/duration_time"
-               android:textColor="@color/black"
-               android:textSize="20dp"
-                />
-       </LinearLayout>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="15dp"
-           android:orientation="horizontal">
+               android:paddingTop="15dp"
+               android:orientation="horizontal">
 
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/go_to_bed"
-               android:textSize="20dp"
-               
-               android:layout_gravity="left"
-               android:textColor="@color/black"
-               />
-           <TextView
-               android:layout_width="0dp"
-               android:layout_height="match_parent"
-               android:layout_weight="1"/>
-           <TextView
-               android:id="@+id/go_to_bed_time"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/go_to_bed_time"
-               android:textColor="@color/black"
-               android:textSize="20dp"
-               
-               android:layout_gravity="right"
-               />
-       </LinearLayout>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="15dp"
-           android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/duration"
+                   android:textSize="20dp"
 
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/waking_up"
-               android:textSize="20dp"
-               
-               android:layout_gravity="left"
-               android:textColor="@color/black"
-               />
-           <TextView
-               android:layout_width="0dp"
-               android:layout_height="match_parent"
-               android:layout_weight="1"/>
-           <TextView
-               android:id="@+id/waking_up_time"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/waking_up_time"
-               android:textColor="@color/black"
-               android:textSize="20dp"
-               
-               android:layout_gravity="right"
-               />
-       </LinearLayout>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="15dp"
-           android:orientation="horizontal">
+                   android:layout_gravity="left"
+                   android:textColor="@color/black"
+                   />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"/>
 
-           <TextView
-               android:layout_width="wrap_content"
+               <TextView
+                   android:id="@+id/sleep_duration"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="right"
+                   android:text="@string/duration_time"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+                   />
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="@string/snooze_time"
-               android:textSize="20dp"
-               
-               android:layout_gravity="left"
-               android:textColor="@color/black"
-               />
-           <TextView
-               android:layout_width="0dp"
-               android:layout_height="match_parent"
-               android:layout_weight="1"/>
-           <TextView
-               android:id="@+id/total_time_of_snooze"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/time_of_snooze"
-               android:textColor="@color/black"
-               android:textSize="20dp"
-               
-               android:layout_gravity="right"
-               />
-       </LinearLayout>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="15dp"
-           android:orientation="horizontal">
+               android:paddingTop="15dp"
+               android:orientation="horizontal">
 
-           <TextView
-               android:layout_width="wrap_content"
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/go_to_bed"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="left"
+                   android:textColor="@color/black"
+                   />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"/>
+               <TextView
+                   android:id="@+id/go_to_bed_time"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/go_to_bed_time"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="right"
+                   />
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="@string/snooze_number"
-               android:textSize="20dp"
-               
-               android:layout_gravity="left"
-               android:textColor="@color/black"
-               />
-           <TextView
-               android:layout_width="0dp"
-               android:layout_height="match_parent"
-               android:layout_weight="1"/>
-           <TextView
-               android:layout_width="wrap_content"
+               android:paddingTop="15dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/waking_up"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="left"
+                   android:textColor="@color/black"
+                   />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"/>
+               <TextView
+                   android:id="@+id/waking_up_time"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/waking_up_time"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="right"
+                   />
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="@string/number_of_times"
-               android:textColor="@color/black"
-               android:textSize="20dp"
-               
-               android:layout_gravity="right"
-               />
-       </LinearLayout>
-       <LinearLayout
-           android:paddingTop="5dp"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal">
-           <ImageView
-               android:layout_width="wrap_content"
-               android:layout_height="match_parent"
-               android:src="@drawable/ic_info_outline_black_24dp"/>
-           <TextView
-               android:paddingLeft="20dp"
-               android:layout_width="wrap_content"
-               android:layout_height="match_parent"
-               android:text="@string/info"/>
+               android:paddingTop="15dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/snooze_time"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="left"
+                   android:textColor="@color/black"
+                   />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"/>
+               <TextView
+                   android:id="@+id/total_time_of_snooze"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/time_of_snooze"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="right"
+                   />
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingTop="15dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/snooze_number"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="left"
+                   android:textColor="@color/black"
+                   />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/number_of_times"
+                   android:textColor="@color/black"
+                   android:textSize="20dp"
+
+                   android:layout_gravity="right"
+                   />
+           </LinearLayout>
+           <LinearLayout
+               android:paddingTop="5dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:src="@drawable/ic_info_outline_black_24dp"/>
+               <TextView
+                   android:paddingLeft="20dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:text="@string/info"/>
+           </LinearLayout>
        </LinearLayout>
    </LinearLayout>
 </ScrollView>
