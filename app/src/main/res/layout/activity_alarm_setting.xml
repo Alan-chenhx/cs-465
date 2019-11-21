@@ -24,6 +24,7 @@
             android:minWidth="100dp"
             android:scrollHorizontally="true"
             android:text="CS465 Alarm"
+            android:gravity="center"
             android:textColor="@android:color/white" />
 
         <ImageView

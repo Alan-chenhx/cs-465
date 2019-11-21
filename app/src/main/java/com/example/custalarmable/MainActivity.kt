@@ -50,8 +50,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 var intent = Intent(this, AlarmSetting::class.java)
                 startActivity(intent)
                 var testAlarm = AlarmItem()
-                testAlarm.alarmEnable = false
+                testAlarm.alarmEnable = true
                 testAlarm.alarmType = "work"
+                testAlarm.alarmName = "CS 465"
                 listAdapter.addItem(testAlarm)
             }
             R.id.jump -> {

@@ -68,7 +68,16 @@ public class AlarmSetting extends AppCompatActivity {
         time_control();
 
         snooze_jump();
-
+        complete();
+    }
+    private void complete(){
+        findViewById(R.id.addItemBtn).setOnClickListener(new CompoundButton.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.addItemBtn ) {
+                    finish();
+                }
+            }
+        });
     }
 
     private void snooze_jump() {
