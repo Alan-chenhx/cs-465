@@ -289,6 +289,14 @@ public class AlarmSetting extends AppCompatActivity {
             }
         });
     }
-
+//    @Override
+//    public void onBackPressed() {
+//        moveTaskToBack(true);
+//    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(AlarmSetting.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
 
