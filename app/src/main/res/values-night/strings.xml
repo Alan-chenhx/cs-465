@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CustAlarmable</string>
+    <string-array name="ringtone_arrays">
+        <item>Chimes</item>
+        <item>Nature</item>
+        <item>Robot</item>
+    </string-array>
+    <string name="analysis_name">Sleep Data</string>
+    <string name="week">week</string>
+    <string name="month">month</string>
+    <string name="average">Average on  Last Week...</string>
+    <string name="duration">Sleep Duration</string>
+    <string name="duration_time">7 hrs</string>
+    <string name="go_to_bed">Go-to-bed Time</string>
+    <string name="go_to_bed_time">12:30 AM</string>
+    <string name="waking_up">Waking-up Time</string>
+    <string name="waking_up_time">7:45 AM</string>
+    <string name="snooze_time">Total Time of Snooze</string>
+    <string name="time_of_snooze">22 min</string>
+    <string name="snooze_number">Average of Snooze</string>
+    <string name="number_of_times">4 times</string>
+    <string name="info">Try to modify your alarm based on the data!</string>
+    <string name="hint_text"></string>
+</resources>

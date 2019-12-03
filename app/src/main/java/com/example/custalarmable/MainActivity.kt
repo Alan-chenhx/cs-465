@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         addItemBtn.setOnClickListener(this)
         jump.setOnClickListener(this)
+        night_mode.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -58,6 +60,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.jump -> {
                 var intent = Intent(this, Sleep::class.java)
                 startActivity(intent)
+            }
+            R.id.night_mode -> {
+                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
             }
 
         }

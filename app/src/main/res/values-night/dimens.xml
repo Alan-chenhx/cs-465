@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="function_text_size">18sp</dimen>
+    <dimen name="number_size">12sp</dimen>
+    <dimen name="listDateFontSize">15sp</dimen>
+    <dimen name="listDateMargin">8dp</dimen>
+    <dimen name="listIconDim">18dp</dimen>
+    <dimen name="floatingButtonIconSize">40dp</dimen>
+    <dimen name="week_click">40dp</dimen>
+    <dimen name="actionButtonSize">65dp</dimen>
+</resources>
