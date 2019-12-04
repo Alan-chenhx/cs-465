@@ -18,4 +18,5 @@
     <color name="ColorWork">#E6E91E63</color>
     <color name="ColorSleep">#E6673AB7</color>
     <color name="text_color">#1976D2</color>
+    <color name="bg">#ffffff</color>
 </resources>
