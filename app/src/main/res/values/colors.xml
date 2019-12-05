@@ -19,4 +19,7 @@
     <color name="ColorSleep">#E6673AB7</color>
     <color name="text_color">#1976D2</color>
     <color name="bg">#ffffff</color>
+    <color name="tint_color">#000000</color>
+    <color name="alarm_text">#000000</color>
+    <color name="dropDown_color">#ffffff</color>
 </resources>

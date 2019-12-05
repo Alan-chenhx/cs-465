@@ -267,7 +267,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_margin="16dp"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="@color/bg"
             android:src="@drawable/ic_check_white_24dp"
             android:tint="@color/colorAccent"
             app:borderWidth="0dp"
