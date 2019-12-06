@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 
@@ -41,13 +42,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            this.night_mode.setImageResource(R.drawable.ic_brightness_7_black_24dp)
+        } else {
+            this.night_mode.setImageResource(R.drawable.ic_brightness_2_black_24dp)
+        }
+
         addItemBtn.setOnClickListener(this)
         jump.setOnClickListener(this)
         night_mode.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        when (v?.id){
+        when (v?.id) {
             R.id.addItemBtn -> {
                 var intent = Intent(this, AlarmSetting::class.java)
                 startActivity(intent)
@@ -78,7 +85,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
+        when (item.itemId) {
             R.id.statistics -> {
                 val intent = Intent(this, Analysis::class.java)
                 startActivity(intent)

@@ -123,7 +123,7 @@ public class AlarmSetting extends AppCompatActivity {
 
 
 //                System.out.println(hour);
-                new TimePickerDialog(AlarmSetting.this, new TimePickerDialog.OnTimeSetListener() {
+                new TimePickerDialog(AlarmSetting.this,  new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         int houre = hourOfDay;
