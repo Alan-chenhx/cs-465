@@ -34,6 +34,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.2.0-beta02'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.race604.waveloading:library:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 repositories {
     mavenCentral()

@@ -1,26 +1,41 @@
 package com.example.custalarmable
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.ImageButton
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
-
+import org.json.JSONArray
+import java.lang.reflect.Type
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val listAdapter = ListAdapter((1..5).map { AlarmItem() }.toMutableList())
+    private lateinit var listAdapter: ListAdapter
+    private lateinit var alarmListPreferences: SharedPreferences
+    private val gson = Gson()
+    val alarmListType: Type? = object : TypeToken<ArrayList<AlarmItem>>() {}.type
+
+    fun getAlarmList() : ArrayList<AlarmItem> {
+        val json = alarmListPreferences.getString("AlarmList", "[]")
+        val alarmList: ArrayList<AlarmItem> = gson.fromJson(json, alarmListType)
+        return alarmList
+    }
+
+    fun saveAlarmList() {
+        val json = gson.toJson(listAdapter.getList())
+        alarmListPreferences.edit().putString("AlarmList", json).apply()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +43,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        alarmListPreferences = getSharedPreferences("AlarmSettings", Context.MODE_PRIVATE)
+
+        listAdapter = ListAdapter(getAlarmList())
 
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -37,6 +55,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = recyclerView.adapter as ListAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
+                saveAlarmList()
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
@@ -63,6 +82,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 testAlarm.alarmType = "work"
                 testAlarm.alarmName = "CS 465"
                 listAdapter.addItem(testAlarm)
+                saveAlarmList()
             }
             R.id.jump -> {
                 var intent = Intent(this, Sleep::class.java)

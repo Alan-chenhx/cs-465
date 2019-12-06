@@ -1,12 +1,16 @@
 package com.example.custalarmable
 
-import android.R.*
+import android.R.color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item.view.*
 
-class ListAdapter(private val items: MutableList<AlarmItem>) : RecyclerView.Adapter<ListAdapter.VH>() {
+
+class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapter<ListAdapter.VH>() {
+    fun getList(): ArrayList<AlarmItem> {
+        return items
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         return VH(parent)
