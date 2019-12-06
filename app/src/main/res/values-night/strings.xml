@@ -9,6 +9,7 @@
     <string name="week">week</string>
     <string name="month">month</string>
     <string name="average">Average on  Last Week...</string>
+    <string name="averagem">Average on  Last Month...</string>
     <string name="duration">Sleep Duration</string>
     <string name="duration_time">7 hrs</string>
     <string name="go_to_bed">Go-to-bed Time</string>

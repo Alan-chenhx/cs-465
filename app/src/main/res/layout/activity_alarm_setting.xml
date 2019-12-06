@@ -71,7 +71,7 @@
                         android:paddingHorizontal="20dp"
                         android:paddingVertical="10dp"
                         android:text="9:00 AM"
-                        android:textColor="#64B5F6"
+                        android:textColor="@color/text_color"
                         android:textSize="50sp" />
 
                 </androidx.cardview.widget.CardView>
