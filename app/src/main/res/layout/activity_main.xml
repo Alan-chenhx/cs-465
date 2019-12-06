@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/toolbar_color"
         android:layoutDirection="rtl">
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_margin="16dp"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="@color/check_color"
             android:src="@drawable/ic_add_white_24dp"
             android:tint="@color/colorAccent"
             app:borderWidth="0dp"

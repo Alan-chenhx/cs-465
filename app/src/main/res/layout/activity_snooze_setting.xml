@@ -10,7 +10,7 @@
         android:id="@+id/toolbar_snooze_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
+        android:background="@color/toolbar_color">
 
         <TextView
             android:id="@+id/title_snooze_settings"
@@ -59,6 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/function_text_size"
+                    android:textColor="@color/text_color"
                     android:text="9"/>
 
                 <TextView
@@ -181,7 +182,8 @@
                         android:id="@+id/increaseSoundSwitch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="end|center"/>
+                        android:gravity="end|center"
+                        android:theme="@style/SwitchTheme"/>
 
                 </LinearLayout>
                 <TextView
@@ -267,7 +269,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/bg"
+            android:backgroundTint="@color/check_color"
             android:src="@drawable/ic_check_white_24dp"
             android:tint="@color/colorAccent"
             app:borderWidth="0dp"

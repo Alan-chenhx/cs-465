@@ -22,4 +22,7 @@
     <color name="tint_color">#000000</color>
     <color name="alarm_text">#000000</color>
     <color name="dropDown_color">#ffffff</color>
+    <color name="switch_color">#4198FC</color>
+    <color name="toolbar_color">#4198FC</color>
+    <color name="check_color">#ffffff</color>
 </resources>
