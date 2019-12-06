@@ -56,7 +56,7 @@ public class week extends Fragment {
         Legend legend = dataChart.getLegend();
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-
+        legend.setTextSize(15);
         return view;
     }
     private void showDataOnChart() {
@@ -99,22 +99,22 @@ public class week extends Fragment {
     }
     private void setAxisYRight() {
         YAxis right = dataChart.getAxisRight();
-        right.setValueFormatter(new IAxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return Integer.toString((int) value);
-            }
-        });
+//        right.setValueFormatter(new ValueFormatter() {
+//            @Override
+//            public String getFormattedValue(float value, AxisBase axis) {
+//                return Integer.toString((int) value);
+//            }
+//        });
         right.setDrawGridLines(false);
     }
     private void setAxisYLeft() {
         YAxis left = dataChart.getAxisLeft();
-        left.setValueFormatter(new IAxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return Integer.toString((int) value);
-            }
-        });
+//        left.setValueFormatter(new ValueFormatter() {
+//            @Override
+//            public String getFormattedValue(float value, AxisBase axis) {
+//                return Integer.toString((int) value);
+//            }
+//        });
         left.setDrawGridLines(false);
         float avg_num=avg(z);
         LimitLine yLimitLine = new LimitLine(avg_num,"AVG");
@@ -161,6 +161,7 @@ public class week extends Fragment {
         amountBar.setColor(Color.parseColor("#C23531"));
 
         amountBar.setValueTextSize(0);
+
 
         barData.addDataSet(amountBar);
 
