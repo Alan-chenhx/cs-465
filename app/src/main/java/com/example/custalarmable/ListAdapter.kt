@@ -147,6 +147,11 @@ class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction
                 listSnoozeIcon.setColorFilter(resources.getColor(color.darker_gray))
                 listIncreasingSoundIcon.setColorFilter(resources.getColor(color.darker_gray))
             } else{
+                rowCard.elevation = 5f
+                rowCard.setCardBackgroundColor(resources.getColor(color.white))
+                alarmName.setTextColor(resources.getColor(R.color.colorPrimary))
+                alarmTime.setTextColor(resources.getColor(R.color.colorPrimary))
+                alarmAmPm.setTextColor(resources.getColor(R.color.colorPrimary))
                 if(!alarmItem.fri){
                     friday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
