@@ -24,17 +24,17 @@ class AlarmItem :Comparable<AlarmItem>{
     var numberOfSnooze = 10
     var minVolume = 0.8
     override fun compareTo(other: AlarmItem): Int {
-        if(alarmEnable==true && other.alarmEnable==false){
-            return 1
+        return if (alarmEnable && !other.alarmEnable){
+            -1
         }else if(alarmEnable==false && other.alarmEnable==true){
-            return -1
+            1
         }else{
             if(alarmAmPm=="AM" && other.alarmAmPm=="PM" ){
-                return -1
+                -1
             }else if(alarmAmPm=="PM" && other.alarmAmPm=="AM" ){
-                return 1
+                1
             }else{
-                return alarmTime.compareTo(other.alarmTime)
+                alarmTime.compareTo(other.alarmTime)
             }
         }
     }
