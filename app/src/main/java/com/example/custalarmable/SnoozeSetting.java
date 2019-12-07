@@ -36,8 +36,6 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
 
     private Gson gson = new Gson();
 
-    private String[] ringtone_arrays;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +51,7 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         AutoCompleteTextView editTextFilledExposedDropdown =
                 findViewById(R.id.outlined_exposed_dropdown);
         editTextFilledExposedDropdown.setAdapter(adapter);
-        ringtone_arrays = getResources().getStringArray(R.array.ringtone_arrays);
+        String[] ringtone_arrays = getResources().getStringArray(R.array.ringtone_arrays);
         editTextFilledExposedDropdown.setText(ringtone_arrays[0], false);
 
         //set up sliders
@@ -101,11 +99,12 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
                 if (v.getId() == R.id.addItemBtn ) {
                     Intent data = new Intent();
                     setResult(Activity.RESULT_OK, data);
-                    AlarmItem testAlarm = new AlarmItem();
-                    testAlarm.setAlarmEnable(true);
-                    testAlarm.setAlarmType("work");
-                    testAlarm.setAlarmName("CS 465");
-                    String json = gson.toJson(testAlarm);
+                    AlarmItem alarm = new AlarmItem();
+                    alarm.setSnoozePeriod(Integer.parseInt(snoozePeriodPicker.getText().toString()));
+                    alarm.setNumberOfSnooze( Math.round(snoozeLimitSlider.getValue()) );
+                    alarm.setMinVolume( Math.round(volumeSlider.getValue()) );
+                    alarm.setIncreasingVolume( increaseSound.isChecked() );
+                    String json = gson.toJson(alarm);
                     data.putExtra("alarm", json);
                     finish();
                 }

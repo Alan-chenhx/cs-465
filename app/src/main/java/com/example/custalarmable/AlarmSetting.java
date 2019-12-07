@@ -29,8 +29,9 @@ import com.google.gson.Gson;
 
 
 public class AlarmSetting extends AppCompatActivity {
-
+    private static final int SNOOZE_SETTING = 2;
     private Gson gson = new Gson();
+    AlarmItem alarm = new AlarmItem();
 
     MaterialButton sleep;
     MaterialButton work;
@@ -88,7 +89,6 @@ public class AlarmSetting extends AppCompatActivity {
                 if (v.getId() == R.id.addItemBtn ) {
                     Intent data = new Intent();
                     setResult(Activity.RESULT_OK, data);
-                    AlarmItem alarm = new AlarmItem();
                     alarm.setAlarmEnable(true);
 //                    alarm.setAlarmType("work");
                     alarm.setAlarmTime(timestring);
@@ -132,7 +132,7 @@ public class AlarmSetting extends AppCompatActivity {
 
                 if (v.getId() == R.id.setting && snooze_setting.getVisibility() == View.VISIBLE) {
                     Intent intent = new Intent(AlarmSetting.this, SnoozeSetting.class);
-                    startActivity(intent);
+                    startActivityForResult(intent, SNOOZE_SETTING);
 
                 }
             }
@@ -229,7 +229,23 @@ public class AlarmSetting extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SNOOZE_SETTING) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (data != null) {
+                    String json = data.getStringExtra("alarm");
+                    AlarmItem snooze_alarm = gson.fromJson(json, AlarmItem.class);
+                    alarm.setSnoozePeriod(snooze_alarm.getSnoozePeriod());
+                    alarm.setMinVolume(snooze_alarm.getMinVolume());
+                    alarm.setNumberOfSnooze(snooze_alarm.getNumberOfSnooze());
+                    alarm.setIncreasingVolume(snooze_alarm.getIncreasingVolume());
+                }
+            }
+        }
     }
 
     private int[] convert(CharSequence time) {

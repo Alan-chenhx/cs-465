@@ -6,8 +6,8 @@ class AlarmItem :Comparable<AlarmItem>{
     var alarmAmPm: String = "AM"
     var alarmType: String = "sleep"
     var alarmEnable: Boolean = true
-    var snooze: Boolean = true
-    var increasingVolume: Boolean = true
+    var snooze: Boolean = false
+    var increasingVolume: Boolean = false
     var sun = false
     var sat = false
     var fri = false
@@ -17,12 +17,12 @@ class AlarmItem :Comparable<AlarmItem>{
     var mon = false
     var ringtone = ""
     var finalRingtone = ""
-    var repeats = true
-    var autodelete = true
-    var vibrateOnly = true
+    var repeats = false
+    var autodelete = false
+    var vibrateOnly = false
     var snoozePeriod = 9
     var numberOfSnooze = 10
-    var maxVolume = 0.8
+    var minVolume = 0.8
     override fun compareTo(other: AlarmItem): Int {
         if(alarmEnable==true && other.alarmEnable==false){
             return 1
