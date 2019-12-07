@@ -37,9 +37,6 @@ public class DefaultSetting extends AppCompatActivity implements View.OnClickLis
     //increase sound switch
     Switch increaseSound;
 
-    private String[] max_ringtone_arrays;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,22 +135,5 @@ public class DefaultSetting extends AppCompatActivity implements View.OnClickLis
         });
         builder.show();
 
-    }
-
-    public static final class NumberSnoozeLabelFormatter implements Slider.LabelFormatter {
-        @Override
-        public String getFormattedValue(float value) {
-            if (value >= 20) {
-                return "∞";
-            } else if (value >= 15) {
-                return "15";
-            } else if (value >= 10) {
-                return "10";
-            } else if (value >= 5) {
-                return "5";
-            } else {
-                return "1";
-            }
-        }
     }
 }
