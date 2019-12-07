@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         alarmListPreferences = getSharedPreferences("AlarmSettings", Context.MODE_PRIVATE)
 
-        listAdapter = ListAdapter(getAlarmList())
+        listAdapter = ListAdapter(getAlarmList(), ::createNewAlarm)
 
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -73,11 +73,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         night_mode.setOnClickListener(this)
     }
 
+    fun createNewAlarm() {
+        var intent = Intent(this, AlarmSetting::class.java)
+        startActivityForResult(intent, SETTING_ALARM)
+    }
+
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.addItemBtn -> {
-                var intent = Intent(this, AlarmSetting::class.java)
-                startActivityForResult(intent, SETTING_ALARM)
+                createNewAlarm()
             }
             R.id.jump -> {
                 var intent = Intent(this, DefaultSetting::class.java)

@@ -1,16 +1,16 @@
 package com.example.custalarmable
 
 import android.R.color
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Switch
-import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item.view.*
+import kotlin.reflect.KFunction0
 
 
-class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapter<ListAdapter.VH>() {
+class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction0: KFunction0<Unit>) : RecyclerView.Adapter<ListAdapter.VH>() {
     fun getList(): ArrayList<AlarmItem> {
         return items
     }
@@ -24,6 +24,10 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
         holder.toggle.setOnClickListener {
             items[position].alarmEnable = !items[position].alarmEnable
             sort()
+        }
+        holder.card.setOnClickListener {
+            removeAt(position)
+            kFunction0()
         }
     }
 
@@ -61,6 +65,7 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
             LayoutInflater.from(parent.context).inflate(R.layout.row_item, parent, false)) {
 
         lateinit var toggle : Switch
+        lateinit var card : CardView
 
         fun bind(alarmItem: AlarmItem) = with(itemView) {
             alarmName.text = alarmItem.alarmName
@@ -68,6 +73,7 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
             alarmAmPm.text = alarmItem.alarmAmPm
             alarmToggle.isChecked = alarmItem.alarmEnable
             toggle = alarmToggle
+            card = rowCard
 
             if(!alarmItem.snooze){
                 listSnoozeIcon.setColorFilter(resources.getColor(color.darker_gray))
