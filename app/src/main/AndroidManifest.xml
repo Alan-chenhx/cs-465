@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DefaultSetting"></activity>
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/color_change" />
@@ -16,19 +18,19 @@
         <activity
             android:name=".Analysis"
             android:label="@string/analysis_name"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AlarmSetting"
             android:label="@string/analysis_name"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SnoozeSetting"
             android:label="@string/analysis_name"
-            android:parentActivityName=".AlarmSetting"></activity>
+            android:parentActivityName=".AlarmSetting" />
         <activity
             android:name=".Sleep"
             android:label="@string/analysis_name"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

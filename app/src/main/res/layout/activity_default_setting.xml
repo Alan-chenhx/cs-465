@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_sleep_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_color">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@android:color/white"
+            android:ellipsize="end"
+            android:minWidth="100dp"
+            android:scrollHorizontally="true"
+            android:text="Default Setting"
+            android:gravity="center"
+            android:textColor="@android:color/white" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg"
+            android:scrollbars="none">
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="vertical"-->
+            <!--                android:paddingHorizontal="5dp">-->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start|center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="0dp"
+                        android:text="Ringtone:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/function_text_size"
+                        android:textStyle="bold" />
+
+                    <include
+                        android:id="@+id/defaultRingtone"
+                        layout="@layout/ringtone_dropdown_menu"
+                        android:layout_width="175dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp" />
+
+                </RelativeLayout>
+
+
+                <!--                tools:context=".SnoozeSetting"-->
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Snooze every "
+                        android:textStyle="bold"
+                        android:textSize="@dimen/function_text_size"
+                        android:textColor="@color/text_color"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:id="@+id/snoozePeriodDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/function_text_size"
+                        android:textColor="@color/text_color"
+                        android:text="9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" mins"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/function_text_size"
+                        android:textColor="@color/text_color"/>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/function_text_size"
+                        android:text="Max number of snooze:"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_color"
+                        android:layout_marginBottom="5dp"/>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/snoozeLimitDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="0"
+                        android:valueTo="20"
+                        android:stepSize="5"/>
+                    <LinearLayout
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="5"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="10"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="15"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="∞"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="25dp">
+
+                    <TextView
+                        android:layout_marginEnd="50dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Final snooze ringtone:"
+                        android:textColor="@color/text_color"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/function_text_size"/>
+
+                    <include
+                        android:id="@+id/defaultFinalSnoozeRingtone"
+                        layout="@layout/final_ringtone_dropdown_menu"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Increase sound"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/function_text_size"
+                            android:textColor="@color/text_color"/>
+                        <Switch
+                            android:id="@+id/increaseSoundSwitchDefault"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center"
+                            android:theme="@style/SwitchTheme"/>
+
+                    </LinearLayout>
+                    <TextView
+                        android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                        android:drawableTint="@color/text_color"
+                        android:drawablePadding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sound will increase after each snooze"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_color"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/volumeOfFirstRingTitleDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volume of first ring:"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_color"
+                        android:textSize="17sp"
+                        android:layout_marginBottom="5dp"/>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/volumeOfFirstRingDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="0"
+                        android:valueTo="100"
+                        android:stepSize="1"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0%"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="20"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="40"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="60"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="80"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100%"
+                            android:textSize="@dimen/number_size"
+                            android:textColor="@color/text_color"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+            <!--</LinearLayout>-->
+
+
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addItemBtnDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/check_color"
+            android:src="@drawable/ic_check_white_24dp"
+            android:tint="@color/colorAccent"
+            app:borderWidth="0dp"
+            app:maxImageSize="@dimen/floatingButtonIconSize" />
+
+    </FrameLayout>
+
+</LinearLayout>
