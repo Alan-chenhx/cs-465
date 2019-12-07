@@ -61,6 +61,27 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
             if(!alarmItem.increasingVolume){
                 listIncreasingSoundIcon.setColorFilter(resources.getColor(color.darker_gray))
             }
+            if(!alarmItem.fri){
+                friday.setTextColor(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.sun){
+                sunday.setTextColor(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.sat){
+                saturday.setTextColor(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.mon){
+                monday.setTextColor(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.tue){
+                tuesday.setTextColor(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.wed){
+                wednesday.setTextColor(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.thu){
+                thursday.setTextColor(resources.getColor(color.darker_gray))
+            }
 
             if (!alarmItem.alarmEnable) {
                 rowCard.elevation = 0f
