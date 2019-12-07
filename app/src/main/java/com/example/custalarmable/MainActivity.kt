@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivityForResult(intent, SETTING_ALARM)
             }
             R.id.jump -> {
-                var intent = Intent(this, Sleep::class.java)
+                var intent = Intent(this, DefaultSetting::class.java)
                 startActivity(intent)
             }
             R.id.night_mode -> {
