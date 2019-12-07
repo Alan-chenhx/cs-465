@@ -23,17 +23,29 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
     override fun getItemCount(): Int = items.size
 
     fun addItem(alarmItem: AlarmItem) {
-        items.add(alarmItem)
-        items.sort()
-        notifyItemInserted(items.size)
+        var pos = 0
+        for (i in 0..items.size){
+            if (items[i] > alarmItem) {
+                items.add(i, alarmItem)
+                pos = i
+                break
+            }
+        }
+
+        notifyItemMoved(items.size, pos)
     }
 
 
     fun removeAt(position: Int) {
         items.removeAt(position)
-        items.sort()
         notifyItemRemoved(position)
     }
+
+    fun sort() {
+        items.sort()
+        notifyItemRangeChanged(0,items.size)
+    }
+
     fun enableAt(position: Int) {
         items[position].alarmEnable = !items[position].alarmEnable
         notifyItemChanged(position)
