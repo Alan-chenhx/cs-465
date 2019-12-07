@@ -58,7 +58,7 @@ public class DefaultSetting extends AppCompatActivity implements View.OnClickLis
         editTextFilledExposedDropdown.setText(ringtone_arrays[0], false);
 
         ArrayAdapter<CharSequence> adapter2 =
-                ArrayAdapter.createFromResource(this, R.array.ringtone_arrays, R.layout.dropdown_menu_popup_item2);
+                ArrayAdapter.createFromResource(this, R.array.ringtone_arrays, R.layout.dropdown_menu_popup_item);
         AutoCompleteTextView editTextFilledExposedDropdown2 =
                 findViewById(R.id.outlined_exposed_dropdown2);
         editTextFilledExposedDropdown2.setAdapter(adapter2);

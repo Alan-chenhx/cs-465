@@ -16,11 +16,11 @@ class AlarmItem {
     var tue = false
     var mon = false
     var ringtone = ""
-    var finalringtone = ""
+    var finalRingtone = ""
     var repeats = true
     var autodelete = true
-    var viberate = true
-    var snoozeperiod = 9
-    var numberofsnooze = 10
-    var maxvolume = 0.8
+    var vibrateOnly = true
+    var snoozePeriod = 9
+    var numberOfSnooze = 10
+    var maxVolume = 0.8
 }

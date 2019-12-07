@@ -1,6 +1,8 @@
 package com.example.custalarmable;
 
+import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -19,6 +21,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.material.slider.Slider;
+import com.google.gson.Gson;
 
 public class SnoozeSetting extends AppCompatActivity implements View.OnClickListener {
     //change snooze period
@@ -30,6 +33,8 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
 
     //increase sound switch
     Switch increaseSound;
+
+    private Gson gson = new Gson();
 
     private String[] ringtone_arrays;
 
@@ -64,6 +69,8 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
 
         //increase sound switch
         handleIncreaseSoundSwitch();
+
+        complete();
     }
 
     private void handleSnoozePeriod() {
@@ -88,6 +95,23 @@ public class SnoozeSetting extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    private void complete(){
+        findViewById(R.id.addItemBtn).setOnClickListener(new CompoundButton.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.addItemBtn ) {
+                    Intent data = new Intent();
+                    setResult(Activity.RESULT_OK, data);
+                    AlarmItem testAlarm = new AlarmItem();
+                    testAlarm.setAlarmEnable(true);
+                    testAlarm.setAlarmType("work");
+                    testAlarm.setAlarmName("CS 465");
+                    String json = gson.toJson(testAlarm);
+                    data.putExtra("alarm", json);
+                    finish();
+                }
+            }
+        });
+    }
 
     @Override
     public void onClick(View v) {

@@ -18,8 +18,8 @@
     <string name="waking_up_time">7:45 AM</string>
     <string name="snooze_time">Total Time of Snooze</string>
     <string name="time_of_snooze">22 min</string>
-    <string name="snooze_number">Average of Snooze</string>
-    <string name="number_of_times">4 times</string>
-    <string name="info">Try to modify your alarm based on the data!</string>
+    <string name="snooze_number">Times of Snooze</string>
+    <string name="number_of_times">20 times</string>
+    <string name="info">You usually snooze many times before waking up, how about change your snooze period to 10 mins? </string>
     <string name="hint_text"></string>
 </resources>

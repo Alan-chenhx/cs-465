@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 
 
@@ -35,11 +37,14 @@ public class AlarmSetting extends AppCompatActivity {
     Switch mySwitch;
     ToggleButton auto_delete;
     int minute;
+    String timestring = "9:00";
+    String ampm = "AM";
     TextView time;
     Context mcontext;
     ToggleButton snooze;
     ImageButton snooze_setting;
-    private String[] ringtone_arrays;
+    TextInputEditText name_input;
+    ToggleButton vibrate_only;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +60,7 @@ public class AlarmSetting extends AppCompatActivity {
         AutoCompleteTextView editTextFilledExposedDropdown =
                 findViewById(R.id.outlined_exposed_dropdown);
         editTextFilledExposedDropdown.setAdapter(adapter);
-        ringtone_arrays = getResources().getStringArray(R.array.ringtone_arrays);
+        String[] ringtone_arrays = getResources().getStringArray(R.array.ringtone_arrays);
         editTextFilledExposedDropdown.setText(ringtone_arrays[0], false);
 
         sleep = (MaterialButton) findViewById(R.id.sleep_type);
@@ -65,6 +70,8 @@ public class AlarmSetting extends AppCompatActivity {
         mcontext = getApplicationContext();
         snooze = (ToggleButton) findViewById(R.id.snooze);
         snooze_setting = (ImageButton) findViewById(R.id.setting);
+        name_input = findViewById(R.id.title_sleep_data);
+        vibrate_only = findViewById(R.id.vibrate_only);
 
         snooze_setting_control();
         Toggle_control();
@@ -74,17 +81,44 @@ public class AlarmSetting extends AppCompatActivity {
         snooze_jump();
         complete();
     }
+
     private void complete(){
         findViewById(R.id.addItemBtn).setOnClickListener(new CompoundButton.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.addItemBtn ) {
                     Intent data = new Intent();
                     setResult(Activity.RESULT_OK, data);
-                    AlarmItem testAlarm = new AlarmItem();
-                    testAlarm.setAlarmEnable(true);
-                    testAlarm.setAlarmType("work");
-                    testAlarm.setAlarmName("CS 465");
-                    String json = gson.toJson(testAlarm);
+                    AlarmItem alarm = new AlarmItem();
+                    alarm.setAlarmEnable(true);
+                    alarm.setAlarmType("work");
+                    alarm.setAlarmTime(timestring);
+                    alarm.setAlarmAmPm(ampm);
+                    alarm.setAlarmName(name_input.getText().toString());
+                    final ToggleButton myToggleButton1 = (ToggleButton) findViewById(R.id.buttonSun);
+                    final ToggleButton myToggleButton2 = (ToggleButton) findViewById(R.id.buttonMon);
+                    final ToggleButton myToggleButton3 = (ToggleButton) findViewById(R.id.buttonTue);
+                    final ToggleButton myToggleButton4 = (ToggleButton) findViewById(R.id.buttonWed);
+                    final ToggleButton myToggleButton5 = (ToggleButton) findViewById(R.id.buttonThur);
+                    final ToggleButton myToggleButton6 = (ToggleButton) findViewById(R.id.buttonFri);
+                    final ToggleButton myToggleButton7 = (ToggleButton) findViewById(R.id.buttonSat);
+                    alarm.setMon(myToggleButton1.isChecked());
+                    alarm.setTue(myToggleButton2.isChecked());
+                    alarm.setWed(myToggleButton3.isChecked());
+                    alarm.setThu(myToggleButton4.isChecked());
+                    alarm.setFri(myToggleButton5.isChecked());
+                    alarm.setSat(myToggleButton6.isChecked());
+                    alarm.setSun(myToggleButton7.isChecked());
+                    alarm.setAutodelete(auto_delete.isChecked());
+                    alarm.setSnooze(snooze.isChecked());
+                    alarm.setRepeats(mySwitch.isChecked());
+                    alarm.setVibrateOnly(vibrate_only.isChecked());
+                    if (sleep.isChecked()){
+                        alarm.setAlarmType("sleep");
+                    } else {
+                        alarm.setAlarmType("work");
+                    }
+
+                    String json = gson.toJson(alarm);
                     data.putExtra("alarm", json);
                     finish();
                 }
@@ -152,8 +186,12 @@ public class AlarmSetting extends AppCompatActivity {
                             ampm = "PM";
                         }
                         if (AlarmSetting.this.minute < 10) {
+                            AlarmSetting.this.timestring = houre + ":" + "0" + AlarmSetting.this.minute;
+                            AlarmSetting.this.ampm = ampm;
                             time.setText(houre + ":" + "0" + AlarmSetting.this.minute + " " + ampm);
                         } else {
+                            AlarmSetting.this.timestring = houre + ":" + AlarmSetting.this.minute;
+                            AlarmSetting.this.ampm = ampm;
                             time.setText(houre + ":" + AlarmSetting.this.minute + " " + ampm);
                         }
                     }
