@@ -25,9 +25,9 @@ class AlarmItem :Comparable<AlarmItem>{
     var minVolume = 0.8
     override fun compareTo(other: AlarmItem): Int {
         return if (alarmEnable && !other.alarmEnable){
-            1
-        }else if(alarmEnable==false && other.alarmEnable==true){
             -1
+        }else if(alarmEnable==false && other.alarmEnable==true){
+            1
         }else{
             if(alarmAmPm=="AM" && other.alarmAmPm=="PM" ){
                 -1
