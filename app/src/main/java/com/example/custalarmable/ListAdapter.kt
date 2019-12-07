@@ -24,12 +24,14 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
 
     fun addItem(alarmItem: AlarmItem) {
         items.add(alarmItem)
+        items.sort()
         notifyItemInserted(items.size)
     }
 
 
     fun removeAt(position: Int) {
         items.removeAt(position)
+        items.sort()
         notifyItemRemoved(position)
     }
     fun enableAt(position: Int) {

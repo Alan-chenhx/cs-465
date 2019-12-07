@@ -90,7 +90,7 @@ public class AlarmSetting extends AppCompatActivity {
                     setResult(Activity.RESULT_OK, data);
                     AlarmItem alarm = new AlarmItem();
                     alarm.setAlarmEnable(true);
-                    alarm.setAlarmType("work");
+//                    alarm.setAlarmType("work");
                     alarm.setAlarmTime(timestring);
                     alarm.setAlarmAmPm(ampm);
                     alarm.setAlarmName(name_input.getText().toString());
