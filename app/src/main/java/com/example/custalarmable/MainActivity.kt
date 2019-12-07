@@ -1,5 +1,6 @@
 package com.example.custalarmable
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -16,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
-import org.json.JSONArray
 import java.lang.reflect.Type
+const val SETTING_ALARM = 1
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -76,13 +77,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.addItemBtn -> {
                 var intent = Intent(this, AlarmSetting::class.java)
-                startActivity(intent)
-                var testAlarm = AlarmItem()
-                testAlarm.alarmEnable = true
-                testAlarm.alarmType = "work"
-                testAlarm.alarmName = "CS 465"
-                listAdapter.addItem(testAlarm)
-                saveAlarmList()
+                startActivityForResult(intent, SETTING_ALARM)
             }
             R.id.jump -> {
                 var intent = Intent(this, DefaultSetting::class.java)
@@ -112,5 +107,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SETTING_ALARM) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (data != null) {
+                    var json = data.getStringExtra("alarm")
+                    var alarm = gson.fromJson(json, AlarmItem::class.java)
+                    listAdapter.addItem(alarm)
+                    saveAlarmList()
+                }
+            }
+        }
     }
 }

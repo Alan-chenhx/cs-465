@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -22,9 +23,12 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.gson.Gson;
 
 
 public class AlarmSetting extends AppCompatActivity {
+
+    private Gson gson = new Gson();
 
     MaterialButton sleep;
     MaterialButton work;
@@ -74,6 +78,14 @@ public class AlarmSetting extends AppCompatActivity {
         findViewById(R.id.addItemBtn).setOnClickListener(new CompoundButton.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.addItemBtn ) {
+                    Intent data = new Intent();
+                    setResult(Activity.RESULT_OK, data);
+                    AlarmItem testAlarm = new AlarmItem();
+                    testAlarm.setAlarmEnable(true);
+                    testAlarm.setAlarmType("work");
+                    testAlarm.setAlarmName("CS 465");
+                    String json = gson.toJson(testAlarm);
+                    data.putExtra("alarm", json);
                     finish();
                 }
             }
@@ -254,7 +266,6 @@ public class AlarmSetting extends AppCompatActivity {
                 // do something, the isChecked will be
                 // true if the switch is in the On position
                 if (isChecked == false) {
-
                     myToggleButton1.setChecked(false);
                     myToggleButton1.setEnabled(false);
                     myToggleButton2.setChecked(false);
@@ -288,15 +299,6 @@ public class AlarmSetting extends AppCompatActivity {
                 }
             }
         });
-    }
-//    @Override
-//    public void onBackPressed() {
-//        moveTaskToBack(true);
-//    }
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(AlarmSetting.this, MainActivity.class);
-        startActivity(intent);
     }
 }
 
