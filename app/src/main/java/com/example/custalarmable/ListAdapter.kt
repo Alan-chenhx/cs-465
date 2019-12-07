@@ -1,16 +1,28 @@
 package com.example.custalarmable
 
 import android.R.color
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Switch
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.row_item.view.*
+import java.lang.reflect.Type
 import kotlin.reflect.KFunction0
 
 
-class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction0: KFunction0<Unit>) : RecyclerView.Adapter<ListAdapter.VH>() {
+class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction0: KFunction0<Unit>, private val alarmListPreferences: SharedPreferences) : RecyclerView.Adapter<ListAdapter.VH>() {
+    private val gson = Gson()
+
+
+    fun saveAlarmList() {
+        val json = gson.toJson(getList())
+        alarmListPreferences.edit().putString("AlarmList", json).apply()
+    }
+
     fun getList(): ArrayList<AlarmItem> {
         return items
     }
@@ -48,17 +60,19 @@ class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction
             items.add(pos, alarmItem)
             notifyItemMoved(items.size, pos)
         }
-
+        saveAlarmList()
     }
 
     fun removeAt(position: Int) {
         items.removeAt(position)
         notifyItemRemoved(position)
+        saveAlarmList()
     }
 
     fun sort() {
         items.sort()
         notifyDataSetChanged()
+        saveAlarmList()
     }
 
     class VH(parent: ViewGroup) : RecyclerView.ViewHolder(
@@ -78,55 +92,55 @@ class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction
             if(!alarmItem.snooze){
                 listSnoozeIcon.setColorFilter(resources.getColor(color.darker_gray))
             }else{
-                listSnoozeIcon.setColorFilter(resources.getColor(R.color.colorPrimary))
+                listSnoozeIcon.setColorFilter(resources.getColor(R.color.text_color))
             }
 
             if(!alarmItem.increasingVolume){
                 listIncreasingSoundIcon.setColorFilter(resources.getColor(color.darker_gray))
             }else{
-                listIncreasingSoundIcon.setColorFilter(resources.getColor(R.color.colorPrimary))
+                listIncreasingSoundIcon.setColorFilter(resources.getColor(R.color.text_color))
             }
 
             if(!alarmItem.fri){
                 friday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                friday.setTextColor(resources.getColor(R.color.colorPrimary))
+                friday.setTextColor(resources.getColor(R.color.text_color))
             }
             if(!alarmItem.sun){
                 sunday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                sunday.setTextColor(resources.getColor(R.color.colorPrimary))
+                sunday.setTextColor(resources.getColor(R.color.text_color))
             }
 
             if(!alarmItem.sat){
                 saturday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                saturday.setTextColor(resources.getColor(R.color.colorPrimary))
+                saturday.setTextColor(resources.getColor(R.color.text_color))
             }
 
             if(!alarmItem.mon){
                 monday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                monday.setTextColor(resources.getColor(R.color.colorPrimary))
+                monday.setTextColor(resources.getColor(R.color.text_color))
             }
 
             if(!alarmItem.tue){
                 tuesday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                tuesday.setTextColor(resources.getColor(R.color.colorPrimary))
+                tuesday.setTextColor(resources.getColor(R.color.text_color))
             }
 
             if(!alarmItem.wed){
                 wednesday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                wednesday.setTextColor(resources.getColor(R.color.colorPrimary))
+                wednesday.setTextColor(resources.getColor(R.color.text_color))
             }
 
 
             if(!alarmItem.thu){
                 thursday.setTextColor(resources.getColor(color.darker_gray))
             }else{
-                thursday.setTextColor(resources.getColor(R.color.colorPrimary))
+                thursday.setTextColor(resources.getColor(R.color.text_color))
             }
 
             if (!alarmItem.alarmEnable) {
@@ -149,49 +163,49 @@ class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction
             } else{
                 rowCard.elevation = 5f
                 rowCard.setCardBackgroundColor(resources.getColor(color.white))
-                alarmName.setTextColor(resources.getColor(R.color.colorPrimary))
-                alarmTime.setTextColor(resources.getColor(R.color.colorPrimary))
-                alarmAmPm.setTextColor(resources.getColor(R.color.colorPrimary))
+                alarmName.setTextColor(resources.getColor(R.color.text_color))
+                alarmTime.setTextColor(resources.getColor(R.color.text_color))
+                alarmAmPm.setTextColor(resources.getColor(R.color.text_color))
                 if(!alarmItem.fri){
                     friday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    friday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    friday.setTextColor(resources.getColor(R.color.text_color))
                 }
                 if(!alarmItem.sun){
                     sunday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    sunday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    sunday.setTextColor(resources.getColor(R.color.text_color))
                 }
 
                 if(!alarmItem.sat){
                     saturday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    saturday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    saturday.setTextColor(resources.getColor(R.color.text_color))
                 }
 
                 if(!alarmItem.mon){
                     monday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    monday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    monday.setTextColor(resources.getColor(R.color.text_color))
                 }
 
                 if(!alarmItem.tue){
                     tuesday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    tuesday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    tuesday.setTextColor(resources.getColor(R.color.text_color))
                 }
 
                 if(!alarmItem.wed){
                     wednesday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    wednesday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    wednesday.setTextColor(resources.getColor(R.color.text_color))
                 }
 
 
                 if(!alarmItem.thu){
                     thursday.setTextColor(resources.getColor(color.darker_gray))
                 }else{
-                    thursday.setTextColor(resources.getColor(R.color.colorPrimary))
+                    thursday.setTextColor(resources.getColor(R.color.text_color))
                 }
             }
         }

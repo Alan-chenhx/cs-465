@@ -33,10 +33,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         return alarmList
     }
 
-    fun saveAlarmList() {
-        val json = gson.toJson(listAdapter.getList())
-        alarmListPreferences.edit().putString("AlarmList", json).apply()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         alarmListPreferences = getSharedPreferences("AlarmSettings", Context.MODE_PRIVATE)
 
-        listAdapter = ListAdapter(getAlarmList(), ::createNewAlarm)
+        listAdapter = ListAdapter(getAlarmList(), ::createNewAlarm, alarmListPreferences)
 
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -56,7 +52,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = recyclerView.adapter as ListAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
-                saveAlarmList()
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
@@ -121,7 +116,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     var json = data.getStringExtra("alarm")
                     var alarm = gson.fromJson(json, AlarmItem::class.java)
                     listAdapter.addItem(alarm)
-                    saveAlarmList()
                 }
             }
         }
