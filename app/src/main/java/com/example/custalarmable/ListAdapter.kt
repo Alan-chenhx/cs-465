@@ -89,6 +89,12 @@ class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction
             toggle = alarmToggle
             card = rowCard
 
+            if (alarmItem.alarmType == "sleep") {
+                listTypeBar.background = resources.getDrawable(R.drawable.rect_tag_sleep)
+            } else {
+                listTypeBar.background = resources.getDrawable(R.drawable.rect_tag_work)
+            }
+
             if(!alarmItem.snooze){
                 listSnoozeIcon.setColorFilter(resources.getColor(color.darker_gray))
             }else{
