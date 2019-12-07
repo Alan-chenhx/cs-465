@@ -6,4 +6,6 @@ class AlarmItem {
     var alarmAmPm: String = "AM"
     var alarmType: String = "sleep"
     var alarmEnable: Boolean = true
+    var snooze:Boolean = true
+    var increasingVolume:Boolean = true
 }

@@ -27,9 +27,14 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
         notifyItemInserted(items.size)
     }
 
+
     fun removeAt(position: Int) {
         items.removeAt(position)
         notifyItemRemoved(position)
+    }
+    fun enableAt(position: Int) {
+        items[position].alarmEnable = !items[position].alarmEnable
+        notifyItemChanged(position)
     }
 
     class VH(parent: ViewGroup) : RecyclerView.ViewHolder(
@@ -41,10 +46,20 @@ class ListAdapter(private val items: ArrayList<AlarmItem>) : RecyclerView.Adapte
             alarmAmPm.text = alarmItem.alarmAmPm
             alarmToggle.isChecked = alarmItem.alarmEnable
 
+
             if (alarmItem.alarmType == "sleep") {
                 listTypeBar.background = resources.getDrawable(R.drawable.rect_tag_sleep)
             } else {
                 listTypeBar.background = resources.getDrawable(R.drawable.rect_tag_work)
+            }
+            if(!alarmItem.snooze){
+                listSnoozeIcon.setBackgroundColor(resources.getColor(color.transparent))
+            }
+            if(!alarmItem.snooze){
+                listSnoozeIcon.setColorFilter(resources.getColor(color.darker_gray))
+            }
+            if(!alarmItem.increasingVolume){
+                listIncreasingSoundIcon.setColorFilter(resources.getColor(color.darker_gray))
             }
 
             if (!alarmItem.alarmEnable) {
