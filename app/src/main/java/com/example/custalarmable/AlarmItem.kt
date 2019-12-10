@@ -26,7 +26,7 @@ class AlarmItem :Comparable<AlarmItem>{
     override fun compareTo(other: AlarmItem): Int {
         return if (alarmEnable && !other.alarmEnable){
             -1
-        }else if(alarmEnable==false && other.alarmEnable==true){
+        }else if(!alarmEnable && other.alarmEnable){
             1
         }else{
             if(alarmAmPm=="AM" && other.alarmAmPm=="PM" ){
@@ -34,7 +34,11 @@ class AlarmItem :Comparable<AlarmItem>{
             }else if(alarmAmPm=="PM" && other.alarmAmPm=="AM" ){
                 1
             }else{
-                alarmTime.compareTo(other.alarmTime)
+                if(alarmTime.length == other.alarmTime.length) {
+                    alarmTime.compareTo(other.alarmTime)
+                } else {
+                    alarmTime.length - other.alarmTime.length
+                }
             }
         }
     }

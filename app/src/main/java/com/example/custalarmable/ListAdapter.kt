@@ -46,20 +46,15 @@ class ListAdapter(private val items: ArrayList<AlarmItem>, private val kFunction
     override fun getItemCount(): Int = items.size
 
     fun addItem(alarmItem: AlarmItem) {
-        var pos = 0
+        var pos = items.size
         for (i in 0 until items.size){
             if (items[i] > alarmItem) {
                 pos = i
                 break
             }
         }
-        if (pos == items.size) {
-            items.add(alarmItem)
-            notifyItemInserted(pos)
-        } else {
-            items.add(pos, alarmItem)
-            notifyItemMoved(items.size, pos)
-        }
+        items.add(pos, alarmItem)
+        notifyItemMoved(items.size, pos)
         saveAlarmList()
     }
 
