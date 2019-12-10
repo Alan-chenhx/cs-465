@@ -66,6 +66,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         addItemBtn.setOnClickListener(this)
         jump.setOnClickListener(this)
         night_mode.setOnClickListener(this)
+        sleep.setOnClickListener(this)
+        work.setOnClickListener(this)
     }
 
     fun createNewAlarm() {
@@ -88,6 +90,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 }
+            }
+            R.id.sleep -> {
+                println("sleep")
+                var intent = Intent(this, Sleep::class.java)
+                startActivity(intent)
+            }
+            R.id.work -> {
+                var intent = Intent(this, Work::class.java)
+                startActivity(intent)
             }
 
         }

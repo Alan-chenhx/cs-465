@@ -34,6 +34,10 @@
             android:name=".Sleep"
             android:label="@string/analysis_name"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Work"
+            android:label="@string/analysis_name"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
